@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>⚽ World Cup Betting Bot</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', monospace; font-size: 14px; }
+header { background: #161b22; border-bottom: 1px solid #30363d; padding: 0 24px; display: flex; align-items: center; gap: 20px; height: 52px; }
+header h1 { font-size: 16px; font-weight: 700; white-space: nowrap; }
+.nav-tabs { display: flex; gap: 4px; }
+.nav-tab { padding: 6px 16px; border-radius: 6px; border: none; background: transparent; color: #8b949e; cursor: pointer; font-size: 13px; font-weight: 500; }
+.nav-tab.active { background: #21262d; color: #e6edf3; }
+.controls { margin-left: auto; display: flex; gap: 8px; align-items: center; }
+.badge { padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 700; }
+.badge-stopped { background: #3d1f1f; color: #f85149; }
+.badge-running { background: #1a3a1a; color: #3fb950; }
+.badge-dryrun  { background: #2d2a1a; color: #d29922; }
+button { padding: 5px 14px; border-radius: 6px; border: none; cursor: pointer; font-size: 12px; font-weight: 600; }
+.btn-start { background: #238636; color: #fff; }
+.btn-stop  { background: #da3633; color: #fff; }
+.btn-dry   { background: #9e6a03; color: #fff; }
+.btn-live  { background: #1f6feb; color: #fff; }
+button:disabled { opacity: 0.4; cursor: default; }
+.page { display: none; padding: 20px; }
+.page.active { display: block; }
+/* Dashboard */
+.dash-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.pnl-bar { grid-column: 1/-1; background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px 24px; display: flex; gap: 40px; align-items: center; }
+.pnl-value { font-size: 28px; font-weight: 700; }
+.pnl-pos { color: #3fb950; } .pnl-neg { color: #f85149; } .pnl-zero { color: #8b949e; }
+.stat { display: flex; flex-direction: column; gap: 2px; }
+.stat-label { font-size: 11px; color: #8b949e; text-transform: uppercase; letter-spacing: 0.5px; }
+.stat-value { font-size: 16px; font-weight: 600; }
+.panel { background: #161b22; border: 1px solid #30363d; border-radius: 8px; display: flex; flex-direction: column; overflow: hidden; max-height: 420px; }
+.panel-header { padding: 10px 16px; border-bottom: 1px solid #30363d; font-weight: 600; font-size: 13px; color: #8b949e; display: flex; justify-content: space-between; align-items: center; }
+.panel-body { overflow-y: auto; flex: 1; padding: 12px; }
+.log-panel { grid-column: 1/-1; max-height: 280px; }
+.log-panel .panel-body { background: #0d1117; font-family: monospace; font-size: 12px; }
+.log-entry { padding: 2px 0; border-bottom: 1px solid #161b22; display: flex; gap: 8px; }
+.log-ts { color: #6e7681; min-width: 60px; }
+.log-source { min-width: 72px; font-weight: 600; }
+.log-src-smarkets { color: #58a6ff; } .log-src-football { color: #3fb950; }
+.log-src-strategy { color: #d29922; } .log-src-bot { color: #bc8cff; }
+.log-msg { color: #e6edf3; }
+.match-card { background: #0d1117; border: 1px solid #21262d; border-radius: 6px; padding: 10px 12px; margin-bottom: 8px; display: flex; align-items: center; gap: 12px; }
+.match-teams { flex: 1; font-weight: 600; font-size: 13px; }
+.match-score { font-size: 18px; font-weight: 700; color: #58a6ff; min-width: 40px; text-align: center; }
+.match-status { font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 600; }
+.status-live { background: #1a3a1a; color: #3fb950; }
+.status-sched { background: #1c2128; color: #8b949e; }
+.match-minute { font-size: 12px; color: #8b949e; min-width: 30px; }
+.pos-row { background: #0d1117; border: 1px solid #21262d; border-radius: 6px; padding: 10px 12px; margin-bottom: 8px; }
+.pos-match { font-weight: 600; margin-bottom: 4px; display: flex; justify-content: space-between; }
+.pos-meta { font-size: 12px; color: #8b949e; display: flex; gap: 16px; }
+.pos-pnl-pos { color: #3fb950; font-weight: 700; } .pos-pnl-neg { color: #f85149; font-weight: 700; }
+.pos-state { font-size: 11px; padding: 1px 7px; border-radius: 10px; font-weight: 600; }
+.state-laid { background: #1c2a3a; color: #58a6ff; }
+.state-traded_out { background: #1a3a1a; color: #3fb950; }
+.empty { color: #6e7681; font-size: 13px; padding: 20px; text-align: center; }
+/* Strategy page */
+.strat-hero { background: linear-gradient(135deg,#1c2a3a,#161b22); border: 1px solid #30363d; border-radius: 12px; padding: 32px; margin-bottom: 24px; }
+.strat-hero h2 { font-size: 22px; margin-bottom: 8px; color: #58a6ff; }
+.strat-hero p { color: #8b949e; line-height: 1.6; font-size: 15px; }
+.strat-cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+.strat-card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 20px; }
+.strat-card h3 { font-size: 12px; color: #8b949e; text-transform: uppercase; margin-bottom: 10px; }
+.strat-card .big { font-size: 28px; font-weight: 700; }
+.strat-card p { font-size: 13px; color: #8b949e; margin-top: 6px; line-height: 1.5; }
+.strat-steps { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 24px; margin-bottom: 24px; }
+.step { display: flex; gap: 16px; margin-bottom: 20px; }
+.step-num { width: 32px; height: 32px; border-radius: 50%; background: #1f6feb; color: #fff; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.step-body h4 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+.step-body p { font-size: 13px; color: #8b949e; line-height: 1.5; }
+.step-body code { background: #21262d; padding: 1px 6px; border-radius: 4px; font-size: 12px; color: #d29922; }
+.example-box { background: #0d1117; border: 1px solid #21262d; border-radius: 8px; padding: 20px; margin-bottom: 24px; }
+.example-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #21262d; font-size: 13px; }
+.example-row:last-child { border-bottom: none; }
+.example-row .label { color: #8b949e; }
+.risk-box { background: #1c1a0a; border: 1px solid #3d3000; border-radius: 8px; padding: 20px; }
+.risk-box h3 { color: #d29922; margin-bottom: 12px; }
+.risk-box li { color: #8b949e; font-size: 13px; line-height: 1.8; margin-left: 16px; }
+/* Lab page */
+.lab-controls { display: flex; gap: 20px; align-items: flex-end; flex-wrap: wrap; background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 20px; margin-bottom: 20px; }
+.lab-field { display: flex; flex-direction: column; gap: 6px; }
+.lab-field label { font-size: 11px; color: #8b949e; text-transform: uppercase; letter-spacing: 0.5px; }
+.lab-field input[type=range] { width: 180px; accent-color: #1f6feb; }
+.lab-field .val { font-size: 20px; font-weight: 700; }
+.lab-btn { padding: 10px 24px; background: #238636; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; }
+.lab-stats { display: grid; grid-template-columns: repeat(6,1fr); gap: 12px; margin-bottom: 20px; }
+.lab-stat { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 14px; text-align: center; }
+.lab-stat .ls-label { font-size: 10px; color: #8b949e; text-transform: uppercase; margin-bottom: 6px; }
+.lab-stat .ls-val { font-size: 20px; font-weight: 700; }
+.lab-year-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+.lab-year { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px; }
+.lab-year h4 { font-size: 13px; color: #8b949e; margin-bottom: 10px; }
+.yr-row { display: flex; justify-content: space-between; font-size: 13px; padding: 4px 0; border-bottom: 1px solid #21262d; }
+.yr-row:last-child { border: none; }
+.filt-btn { padding: 3px 10px; border-radius: 10px; border: 1px solid #30363d; background: transparent; color: #8b949e; cursor: pointer; font-size: 12px; }
+.filt-btn.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+</style>
+</head>
+<body>
+
+<header>
+  <span>⚽</span>
+  <h1>World Cup Bot 2026</h1>
+  <div class="nav-tabs">
+    <button class="nav-tab active" onclick="showPage('dashboard',this)">Dashboard</button>
+    <button class="nav-tab" onclick="showPage('strategy',this)">Strategy</button>
+    <button class="nav-tab" onclick="showPage('backtest',this)">2022 Backtest</button>
+    <button class="nav-tab" onclick="showPage('lab',this)">Backtest Lab</button>
+  </div>
+  <div class="controls">
+    <span id="status-badge" class="badge badge-stopped">STOPPED</span>
+    <span id="dryrun-badge" class="badge badge-dryrun">DRY RUN</span>
+    <button class="btn-dry"  onclick="setDryRun(true)">Dry Run</button>
+    <button class="btn-live" onclick="setDryRun(false)">⚠ Live</button>
+    <button class="btn-start" id="btn-start" onclick="startBot()">▶ Start</button>
+    <button class="btn-stop"  id="btn-stop"  onclick="stopBot()" disabled>■ Stop</button>
+  </div>
+</header>
+
+<!-- DASHBOARD -->
+<div id="page-dashboard" class="page active">
+  <div class="dash-grid">
+    <div class="pnl-bar">
+      <div class="stat"><span class="stat-label">Total P&L</span><span class="pnl-value pnl-zero" id="pnl">£0.00</span></div>
+      <div class="stat"><span class="stat-label">Open Positions</span><span class="stat-value" id="stat-open">0</span></div>
+      <div class="stat"><span class="stat-label">Traded Out</span><span class="stat-value" id="stat-traded">0</span></div>
+      <div class="stat"><span class="stat-label">Live Matches</span><span class="stat-value" id="stat-live">0</span></div>
+    </div>
+    <div class="panel">
+      <div class="panel-header"><span>Matches</span><span id="match-count" style="color:#58a6ff">0</span></div>
+      <div class="panel-body" id="matches-body"><div class="empty">Waiting for match data…</div></div>
+    </div>
+    <div class="panel">
+      <div class="panel-header"><span>Positions</span><span id="pos-count" style="color:#58a6ff">0</span></div>
+      <div class="panel-body" id="positions-body"><div class="empty">No positions yet</div></div>
+    </div>
+    <div class="panel log-panel">
+      <div class="panel-header"><span>Live Logs</span>
+        <label style="font-size:12px;color:#8b949e;cursor:pointer"><input type="checkbox" id="autoscroll" checked> Auto-scroll</label>
+      </div>
+      <div class="panel-body" id="log-body"></div>
+    </div>
+  </div>
+</div>
+
+<!-- STRATEGY -->
+<div id="page-strategy" class="page">
+  <div style="max-width:860px">
+    <div class="strat-hero">
+      <h2>Lay The Draw — Mismatched Games Only</h2>
+      <p>We bet that a clear favourite will score a goal, making a draw impossible. When they do, draw odds spike and we cash out for a guaranteed profit. We only play games where draw odds are ≥ 4.5 — this cuts the draw rate from 21% down to just 6%.</p>
+    </div>
+    <div class="strat-cards">
+      <div class="strat-card"><h3>Draw rate (all games)</h3><div class="big" style="color:#f85149">21%</div><p>1 in 5 games ends in a draw when you bet every match</p></div>
+      <div class="strat-card"><h3>Draw rate (our filter)</h3><div class="big" style="color:#3fb950">6%</div><p>Only 1 in 17 mismatched games ends in a draw</p></div>
+      <div class="strat-card"><h3>Win rate (3 WC backtest)</h3><div class="big" style="color:#3fb950">97%</div><p>83 of 86 qualifying matches were profitable</p></div>
+    </div>
+    <div class="strat-steps">
+      <h3 style="margin-bottom:16px;font-size:15px">How it works — step by step</h3>
+      <div class="step"><div class="step-num">1</div><div class="step-body"><h4>Find a mismatched game</h4><p>We check pre-match draw odds on Smarkets. If draw odds are <code>≥ 4.5</code> (e.g. Brazil vs Haiti, Germany vs Curaçao), one team is a clear favourite. We proceed.</p></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-body"><h4>Lay the draw pre-match</h4><p>We <strong>lay</strong> the draw — betting it WON'T end level. Liability = <code>stake × (odds − 1)</code>. At £200 stake and 5.0 odds, liability = £800.</p></div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-body"><h4>Goal scored after 45 min → cash out for profit</h4><p>When the favourite scores, draw odds spike from 5.0 to ~12.0. We <strong>back</strong> the draw at the new high odds. This locks in guaranteed profit regardless of final result.</p></div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-body"><h4>Still 0-0 at 70 min → limit the loss</h4><p>If no goal by 70 min, draw odds shorten. We back the draw at lower odds to cap our loss. Without this, a 0-0 draw costs the full liability.</p></div></div>
+    </div>
+    <div class="example-box">
+      <h3 style="margin-bottom:16px;font-size:15px">Example: Brazil vs Haiti (draw odds 7.0, stake £200)</h3>
+      <div class="example-row"><span class="label">Pre-match: Lay draw @ 7.0</span><span style="color:#58a6ff">Stake £200, liability £1,200</span></div>
+      <div class="example-row"><span class="label">Brazil scores at 55 min → draw odds spike to 15.0</span><span>—</span></div>
+      <div class="example-row"><span class="label">Back draw @ 15.0, stake £93</span><span style="color:#58a6ff">—</span></div>
+      <div class="example-row"><span class="label">If Brazil wins (likely)</span><span style="color:#3fb950">+£107 profit</span></div>
+      <div class="example-row"><span class="label">If it somehow draws</span><span style="color:#3fb950">+£105 profit</span></div>
+      <div class="example-row"><span class="label">Result: ~£106 locked profit guaranteed</span><span style="color:#3fb950;font-weight:700">✓</span></div>
+    </div>
+    <div class="risk-box">
+      <h3>⚠ Risks</h3>
+      <ul>
+        <li>0-0 draw = full liability lost (~£800 at £200 stake). Use the 70-min exit to limit this.</li>
+        <li>3–4 draws in a row can wipe many wins. Need £3,000+ bankroll.</li>
+        <li>In-play odds move in seconds — bot must execute immediately after a goal.</li>
+        <li>This is gambling. Past results do not guarantee future profits.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- 2022 BACKTEST -->
+<div id="page-backtest" class="page">
+  <div style="max-width:960px">
+    <div style="background:#161b22;border:1px solid #30363d;border-radius:8px;padding:24px;margin-bottom:20px">
+      <h2 style="font-size:18px;margin-bottom:8px">2022 World Cup Backtest — Strategy B</h2>
+      <p style="color:#8b949e;font-size:13px;line-height:1.6">All 48 group stage matches. Only games with draw odds ≥ 4.0 were traded. £200/match lay stake.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:20px">
+      <div style="background:#161b22;border:1px solid #30363d;border-radius:8px;padding:16px;text-align:center"><div style="font-size:10px;color:#8b949e;text-transform:uppercase;margin-bottom:6px">Qualifying</div><div id="bt-qualified" style="font-size:24px;font-weight:700;color:#58a6ff">—</div><div style="font-size:11px;color:#8b949e;margin-top:4px">of 48 total</div></div>
+      <div style="background:#161b22;border:1px solid #30363d;border-radius:8px;padding:16px;text-align:center"><div style="font-size:10px;color:#8b949e;text-transform:uppercase;margin-bottom:6px">Win Rate</div><div id="bt-winrate" style="font-size:24px;font-weight:700;color:#3fb950">—</div></div>
+      <div style="background:#161b22;border:1px solid #30363d;border-radius:8px;padding:16px;text-align:center"><div style="font-size:10px;color:#8b949e;text-transform:uppercase;margin-bottom:6px">Draw Rate</div><div id="bt-drawrate" style="font-size:24px;font-weight:700;color:#3fb950">—</div><div style="font-size:11px;color:#8b949e;margin-top:4px">in qualifying games</div></div>
+      <div style="background:#161b22;border:1px solid #30363d;border-radius:8px;padding:16px;text-align:center"><div style="font-size:10px;color:#8b949e;text-transform:uppercase;margin-bottom:6px">Avg Win</div><div id="bt-avgwin" style="font-size:24px;font-weight:700;color:#3fb950">—</div></div>
+      <div style="background:#161b22;border:1px solid #30363d;border-radius:8px;padding:16px;text-align:center"><div style="font-size:10px;color:#8b949e;text-transform:uppercase;margin-bottom:6px">Total P&L</div><div id="bt-total" style="font-size:24px;font-weight:700;color:#3fb950">—</div></div>
+    </div>
+    <div style="background:#161b22;border:1px solid #30363d;border-radius:8px;overflow:hidden">
+      <div style="padding:12px 16px;border-bottom:1px solid #30363d;font-size:13px;color:#8b949e;display:flex;gap:12px">
+        <span style="font-weight:600">All 48 Matches</span>
+        <span style="background:#21262d;padding:2px 8px;border-radius:10px;font-size:11px;color:#58a6ff">Green = we traded it</span>
+        <span style="background:#21262d;padding:2px 8px;border-radius:10px;font-size:11px;color:#6e7681">Grey = skipped</span>
+      </div>
+      <div style="overflow-x:auto">
+        <table id="bt-table" style="width:100%;border-collapse:collapse;font-size:13px">
+          <thead><tr style="background:#0d1117;color:#8b949e;font-size:11px;text-transform:uppercase">
+            <th style="padding:10px 16px;text-align:left">Match</th>
+            <th style="padding:10px 8px;text-align:center">Score</th>
+            <th style="padding:10px 8px;text-align:center">Draw Odds</th>
+            <th style="padding:10px 8px;text-align:center">Traded?</th>
+            <th style="padding:10px 8px;text-align:center">Result</th>
+            <th style="padding:10px 16px;text-align:right">P&L (£200)</th>
+          </tr></thead>
+          <tbody id="bt-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BACKTEST LAB -->
+<div id="page-lab" class="page">
+  <div style="max-width:1100px">
+    <div class="lab-controls">
+      <div class="lab-field">
+        <label>Min Draw Odds Threshold</label>
+        <input type="range" id="lab-threshold" min="3.5" max="7.0" step="0.5" value="4.5" oninput="document.getElementById('lab-tval').textContent=this.value">
+        <span class="val" id="lab-tval">4.5</span>
+        <small style="color:#6e7681;font-size:11px">Only bet when draw odds ≥ this</small>
+      </div>
+      <div class="lab-field">
+        <label>Lay Stake Per Match (£)</label>
+        <input type="range" id="lab-stake" min="50" max="500" step="50" value="200" oninput="document.getElementById('lab-sval').textContent='£'+this.value">
+        <span class="val" id="lab-sval">£200</span>
+        <small style="color:#6e7681;font-size:11px">Liability = stake × (odds−1)</small>
+      </div>
+      <div class="lab-field">
+        <label>Tournament</label>
+        <div style="display:flex;gap:6px" id="lab-year-filter">
+          <button class="filt-btn active" data-year="all">All 3</button>
+          <button class="filt-btn" data-year="2022">2022</button>
+          <button class="filt-btn" data-year="2018">2018</button>
+          <button class="filt-btn" data-year="2014">2014</button>
+        </div>
+      </div>
+      <button class="lab-btn" onclick="runLab()">▶ Run Backtest</button>
+    </div>
+    <div class="lab-stats">
+      <div class="lab-stat"><div class="ls-label">Matches Bet</div><div class="ls-val" id="ls-qual" style="color:#58a6ff">—</div></div>
+      <div class="lab-stat"><div class="ls-label">Win Rate</div><div class="ls-val" id="ls-wr" style="color:#3fb950">—</div></div>
+      <div class="lab-stat"><div class="ls-label">Draw Rate</div><div class="ls-val" id="ls-dr">—</div></div>
+      <div class="lab-stat"><div class="ls-label">EV Per Trade</div><div class="ls-val" id="ls-ev">—</div></div>
+      <div class="lab-stat"><div class="ls-label">Total P&L</div><div class="ls-val" id="ls-pnl">—</div></div>
+      <div class="lab-stat"><div class="ls-label">Bankroll Needed</div><div class="ls-val" id="ls-bank" style="color:#f85149">—</div></div>
+    </div>
+    <div class="lab-year-grid" id="lab-year-grid"></div>
+    <div style="background:#161b22;border:1px solid #30363d;border-radius:8px;overflow:hidden">
+      <div style="padding:12px 16px;border-bottom:1px solid #30363d;display:flex;gap:8px;align-items:center">
+        <span style="font-weight:600;font-size:13px;color:#8b949e">Match Results</span>
+        <button class="filt-btn active" onclick="filterRows('all',this)">All</button>
+        <button class="filt-btn" onclick="filterRows('traded',this)">Traded only</button>
+        <button class="filt-btn" onclick="filterRows('loss',this)">Losses only</button>
+      </div>
+      <div style="overflow-x:auto;max-height:500px;overflow-y:auto">
+        <table style="width:100%;border-collapse:collapse;font-size:12px">
+          <thead style="position:sticky;top:0;background:#0d1117">
+            <tr style="color:#8b949e;font-size:11px;text-transform:uppercase">
+              <th style="padding:8px 12px;text-align:left">Year</th>
+              <th style="padding:8px 12px;text-align:left">Match</th>
+              <th style="padding:8px 8px;text-align:center">Score</th>
+              <th style="padding:8px 8px;text-align:center">Draw Odds</th>
+              <th style="padding:8px 8px;text-align:center">Bet?</th>
+              <th style="padding:8px 8px;text-align:center">Liability</th>
+              <th style="padding:8px 8px;text-align:center">In-Play Odds</th>
+              <th style="padding:8px 8px;text-align:center">Back Stake</th>
+              <th style="padding:8px 8px;text-align:center">Result</th>
+              <th style="padding:8px 12px;text-align:right">P&L</th>
+            </tr>
+          </thead>
+          <tbody id="lab-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── Nav ───────────────────────────────────────────────────────────────────────
+function showPage(name, btn) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  if (btn) btn.classList.add('active');
+  if (name === 'backtest') loadBacktest();
+  if (name === 'lab') runLab();
+}
+
+// ── WebSocket ─────────────────────────────────────────────────────────────────
+const ws = new WebSocket(`ws://${location.host}/ws`);
+ws.onmessage = e => {
+  const msg = JSON.parse(e.data);
+  if (msg.type === 'init')      applyState(msg.data);
+  else if (msg.type === 'log')       appendLog(msg.data);
+  else if (msg.type === 'matches')   renderMatches(msg.data);
+  else if (msg.type === 'positions') renderPositions(msg.data);
+  else if (msg.type === 'pnl')       renderPnl(msg.data);
+};
+ws.onclose = () => appendLog({ts:'--:--:--', source:'UI', message:'WebSocket disconnected'});
+
+function applyState(d) {
+  renderMatches(d.matches || []);
+  renderPositions(d.positions || []);
+  renderPnl(d.pnl || 0);
+  (d.logs || []).forEach(appendLog);
+  setRunning(d.running);
+  setDryRunBadge(d.dry_run);
+}
+
+// ── Dashboard ─────────────────────────────────────────────────────────────────
+function renderMatches(matches) {
+  const el = document.getElementById('matches-body');
+  document.getElementById('match-count').textContent = matches.length;
+  document.getElementById('stat-live').textContent = matches.filter(m => ['IN_PLAY','LIVE','PAUSED'].includes(m.status)).length;
+  if (!matches.length) { el.innerHTML = '<div class="empty">No matches found</div>'; return; }
+  el.innerHTML = matches.map(m => {
+    const isLive = ['IN_PLAY','LIVE','PAUSED'].includes(m.status);
+    return `<div class="match-card">
+      <div class="match-teams">${m.home}<br><small style="color:#8b949e;font-weight:400">vs ${m.away}</small></div>
+      <div class="match-score">${m.home_score ?? '-'}–${m.away_score ?? '-'}</div>
+      <div class="match-minute">${m.minute ? m.minute+"'" : ''}</div>
+      <span class="match-status ${isLive ? 'status-live' : 'status-sched'}">${isLive ? 'LIVE' : 'SCHED'}</span>
+    </div>`;
+  }).join('');
+}
+
+function renderPositions(positions) {
+  const el = document.getElementById('positions-body');
+  document.getElementById('pos-count').textContent = positions.length;
+  document.getElementById('stat-open').textContent = positions.filter(p => p.state === 'laid').length;
+  document.getElementById('stat-traded').textContent = positions.filter(p => p.state === 'traded_out').length;
+  if (!positions.length) { el.innerHTML = '<div class="empty">No positions yet</div>'; return; }
+  el.innerHTML = positions.map(p => {
+    const pnl = parseFloat(p.pnl.replace('£',''));
+    return `<div class="pos-row">
+      <div class="pos-match"><span>${p.match}</span><span class="pos-state state-${p.state}">${p.state}</span></div>
+      <div class="pos-meta">
+        <span>Lay: ${p.lay_odds}</span><span>Back: ${p.back_odds}</span>
+        <span>Liability: ${p.liability}</span>
+        <span class="${pnl>0?'pos-pnl-pos':pnl<0?'pos-pnl-neg':''}">${p.pnl}</span>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderPnl(val) {
+  const el = document.getElementById('pnl');
+  el.textContent = `£${val.toFixed(2)}`;
+  el.className = 'pnl-value ' + (val > 0 ? 'pnl-pos' : val < 0 ? 'pnl-neg' : 'pnl-zero');
+}
+
+function appendLog(entry) {
+  const el = document.getElementById('log-body');
+  const div = document.createElement('div');
+  div.className = 'log-entry';
+  div.innerHTML = `<span class="log-ts">${entry.ts}</span><span class="log-source log-src-${(entry.source||'').toLowerCase()}">[${entry.source}]</span><span class="log-msg">${entry.message}</span>`;
+  el.appendChild(div);
+  if (document.getElementById('autoscroll').checked) el.scrollTop = el.scrollHeight;
+  while (el.children.length > 300) el.removeChild(el.firstChild);
+}
+
+function setRunning(r) {
+  document.getElementById('status-badge').className = 'badge ' + (r ? 'badge-running' : 'badge-stopped');
+  document.getElementById('status-badge').textContent = r ? 'RUNNING' : 'STOPPED';
+  document.getElementById('btn-start').disabled = r;
+  document.getElementById('btn-stop').disabled  = !r;
+}
+function setDryRunBadge(dry) { document.getElementById('dryrun-badge').style.display = dry ? '' : 'none'; }
+async function startBot()         { await fetch('/api/start', {method:'POST'}); setRunning(true); }
+async function stopBot()          { await fetch('/api/stop',  {method:'POST'}); setRunning(false); }
+async function setDryRun(enabled) { await fetch(`/api/dry_run/${enabled}`, {method:'POST'}); setDryRunBadge(enabled); }
+
+// ── 2022 Backtest ─────────────────────────────────────────────────────────────
+let btLoaded = false;
+async function loadBacktest() {
+  if (btLoaded) return;
+  btLoaded = true;
+  const d = await fetch('/api/backtest').then(r => r.json());
+  document.getElementById('bt-qualified').textContent = d.qualified_count;
+  document.getElementById('bt-winrate').textContent   = Math.round(d.wins/d.qualified_count*100) + '%';
+  document.getElementById('bt-drawrate').textContent  = d.draw_rate_qualified + '%';
+  document.getElementById('bt-avgwin').textContent    = '£' + d.avg_win;
+  document.getElementById('bt-total').textContent     = '£' + d.total_pnl_200.toLocaleString();
+  document.getElementById('bt-tbody').innerHTML = d.matches.map(m => {
+    const [home, away, hg, ag, odds, qualified, pnl] = m;
+    const isDraw = hg === ag;
+    const bg = qualified ? (isDraw ? '#1c0a0a' : '#0d1117') : '#0d1117';
+    const oc = qualified ? (odds >= 6 ? '#3fb950' : '#58a6ff') : '#6e7681';
+    const tc = qualified ? '<span style="color:#3fb950;font-weight:600">✓ Traded</span>' : '<span style="color:#6e7681">— Skipped</span>';
+    const rc = !qualified ? '<span style="color:#6e7681">—</span>' : isDraw ? '<span style="color:#f85149">DRAW (loss)</span>' : '<span style="color:#3fb950">Goal scored ✓</span>';
+    const pc = pnl === null ? '—' : pnl > 0 ? `<span style="color:#3fb950;font-weight:700">+£${pnl}</span>` : `<span style="color:#f85149;font-weight:700">−£${Math.abs(pnl)}</span>`;
+    return `<tr style="background:${bg};border-bottom:1px solid #21262d">
+      <td style="padding:10px 16px;font-weight:${qualified?'600':'400'};color:${qualified?'#e6edf3':'#6e7681'}">${home} vs ${away}</td>
+      <td style="padding:10px 8px;text-align:center;color:#58a6ff;font-weight:700">${hg}–${ag}</td>
+      <td style="padding:10px 8px;text-align:center;color:${oc};font-weight:600">${odds.toFixed(1)}</td>
+      <td style="padding:10px 8px;text-align:center">${tc}</td>
+      <td style="padding:10px 8px;text-align:center">${rc}</td>
+      <td style="padding:10px 16px;text-align:right">${pc}</td>
+    </tr>`;
+  }).join('');
+}
+
+// ── Backtest Lab ──────────────────────────────────────────────────────────────
+let labData = null;
+let labYearFilter = 'all';
+let labRowFilter = 'all';
+
+document.getElementById('lab-year-filter').addEventListener('click', e => {
+  const btn = e.target.closest('[data-year]');
+  if (!btn) return;
+  labYearFilter = btn.dataset.year;
+  document.querySelectorAll('#lab-year-filter .filt-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+});
+
+async function runLab() {
+  const threshold = document.getElementById('lab-threshold').value;
+  const stake     = document.getElementById('lab-stake').value;
+  const d = await fetch(`/api/backtest_interactive?threshold=${threshold}&stake=${stake}`).then(r => r.json());
+  labData = d;
+  updateLabStats();
+}
+
+function updateLabStats() {
+  if (!labData) return;
+  const d = labData;
+  const rows = labYearFilter === 'all' ? d.rows : d.rows.filter(r => String(r.year) === labYearFilter);
+  const qual   = rows.filter(r => r.qualified);
+  const wins   = qual.filter(r => r.pnl > 0);
+  const losses = qual.filter(r => r.pnl <= 0);
+  const total  = qual.reduce((s,r) => s + (r.pnl||0), 0);
+  const dr  = losses.length / (qual.length || 1);
+  const aw  = wins.reduce((s,r)=>s+r.pnl,0)   / (wins.length   || 1);
+  const al  = losses.reduce((s,r)=>s+r.pnl,0) / (losses.length || 1);
+  const ev  = (1-dr)*aw + dr*al;
+  const maxLoss = losses.length ? Math.min(...losses.map(r=>r.pnl)) : 0;
+
+  document.getElementById('ls-qual').textContent = qual.length + '/' + rows.length;
+  document.getElementById('ls-wr').textContent   = qual.length ? Math.round(wins.length/qual.length*100)+'%' : '—';
+  const drEl = document.getElementById('ls-dr');
+  drEl.textContent = (dr*100).toFixed(1)+'%';
+  drEl.style.color = dr > 0.15 ? '#f85149' : '#3fb950';
+  const evEl = document.getElementById('ls-ev');
+  evEl.textContent = '£' + ev.toFixed(2);
+  evEl.style.color = ev > 0 ? '#3fb950' : '#f85149';
+  const pnlEl = document.getElementById('ls-pnl');
+  pnlEl.textContent = '£' + total.toFixed(0);
+  pnlEl.style.color = total > 0 ? '#3fb950' : '#f85149';
+  document.getElementById('ls-bank').textContent = '£' + (Math.abs(maxLoss)*5).toFixed(0);
+
+  document.getElementById('lab-year-grid').innerHTML = [2022,2018,2014].map(y => {
+    if (labYearFilter !== 'all' && String(y) !== labYearFilter) return '';
+    const yr = d.by_year[y];
+    return `<div class="lab-year"><h4>${y} World Cup</h4>
+      <div class="yr-row"><span style="color:#8b949e">Matches bet</span><span style="color:#58a6ff">${yr.qualified}</span></div>
+      <div class="yr-row"><span style="color:#8b949e">Wins</span><span style="color:#3fb950">${yr.wins}</span></div>
+      <div class="yr-row"><span style="color:#f85149">Losses</span><span style="color:#f85149">${yr.losses}</span></div>
+      <div class="yr-row"><span style="color:#8b949e">P&L</span><span style="${yr.pnl>=0?'color:#3fb950':'color:#f85149'};font-weight:700">£${yr.pnl.toFixed(0)}</span></div>
+    </div>`;
+  }).join('');
+
+  renderLabRows(rows, labRowFilter);
+}
+
+function filterRows(filter, btn) {
+  labRowFilter = filter;
+  document.querySelectorAll('[onclick^="filterRows"]').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  if (!labData) return;
+  const rows = labYearFilter === 'all' ? labData.rows : labData.rows.filter(r => String(r.year) === labYearFilter);
+  renderLabRows(rows, filter);
+}
+
+function renderLabRows(rows, filter) {
+  const filtered = filter === 'traded' ? rows.filter(r=>r.qualified)
+                 : filter === 'loss'   ? rows.filter(r=>r.qualified && r.pnl<=0)
+                 : rows;
+  document.getElementById('lab-tbody').innerHTML = filtered.map(r => {
+    const bg = !r.qualified ? '#0d1117' : r.is_draw ? '#1c0a0a' : '#0a1a0a';
+    const oc = r.odds >= 6 ? '#3fb950' : r.odds >= 4.5 ? '#58a6ff' : r.odds >= 4 ? '#d29922' : '#6e7681';
+    const bc = r.qualified ? '<span style="color:#3fb950;font-weight:600">✓ Lay</span>' : '<span style="color:#6e7681">Skip</span>';
+    const rc = !r.qualified ? '—' : r.is_draw ? '<span style="color:#f85149">DRAW ✗</span>' : '<span style="color:#3fb950">Goal ✓</span>';
+    const pc = r.pnl === null ? '—' : r.pnl > 0
+      ? `<span style="color:#3fb950;font-weight:700">+£${r.pnl.toFixed(0)}</span>`
+      : `<span style="color:#f85149;font-weight:700">−£${Math.abs(r.pnl).toFixed(0)}</span>`;
+    return `<tr style="background:${bg};border-bottom:1px solid #21262d">
+      <td style="padding:7px 12px;color:#6e7681">${r.year}</td>
+      <td style="padding:7px 12px;font-weight:${r.qualified?'600':'400'};color:${r.qualified?'#e6edf3':'#6e7681'}">${r.home} vs ${r.away}</td>
+      <td style="padding:7px 8px;text-align:center;color:#58a6ff;font-weight:700">${r.hg}–${r.ag}</td>
+      <td style="padding:7px 8px;text-align:center;color:${oc};font-weight:600">${r.odds.toFixed(1)}</td>
+      <td style="padding:7px 8px;text-align:center">${bc}</td>
+      <td style="padding:7px 8px;text-align:center;color:#d29922">${r.liability ? '£'+r.liability.toFixed(0) : '—'}</td>
+      <td style="padding:7px 8px;text-align:center;color:#8b949e">${r.ip_odds || '—'}</td>
+      <td style="padding:7px 8px;text-align:center;color:#8b949e">${r.back_stake ? '£'+r.back_stake.toFixed(0) : '—'}</td>
+      <td style="padding:7px 8px;text-align:center">${rc}</td>
+      <td style="padding:7px 12px;text-align:right">${pc}</td>
+    </tr>`;
+  }).join('');
+}
+
+window.addEventListener('load', () => runLab());
+</script>
+</body>
+</html>
