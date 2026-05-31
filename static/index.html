@@ -252,6 +252,14 @@ button:disabled { opacity: 0.4; cursor: default; }
       </div>
       <button class="lab-btn" onclick="runLab()">▶ Run Backtest</button>
     </div>
+    <div style="background:#1c1a0a;border:1px solid #3d3000;border-radius:8px;padding:12px 16px;margin-bottom:20px;font-size:12px;line-height:1.8">
+      <strong style="color:#d29922">⚠ Data Accuracy Key:</strong><br>
+      <span style="color:#3fb950">✅ Match, Score, Result</span> — real historical data<br>
+      <span style="color:#d29922">⚠️ Pre-match Draw Odds</span> — estimated from team rankings (±0.5 of real exchange odds)<br>
+      <span style="color:#f85149">🔴 In-Play Odds, Back Stake, P&L</span> — <strong>simulated</strong> using odds × random(1.9–3.0) spike model. Not real exchange data.<br>
+      <span style="color:#8b949e">The total P&L direction (positive/negative) and EV sign are reliable because they depend on the draw rate (real), not exact spike size.</span><br>
+      <span style="color:#58a6ff">📊 Real data available:</span> Betfair offers free historical Stream API data (1-min intervals, last traded price) since 2016 at <a href="https://historicdata.betfair.com" style="color:#58a6ff" target="_blank">historicdata.betfair.com</a>
+    </div>
     <div class="lab-stats">
       <div class="lab-stat"><div class="ls-label">Matches Bet</div><div class="ls-val" id="ls-qual" style="color:#58a6ff">—</div></div>
       <div class="lab-stat"><div class="ls-label">Win Rate</div><div class="ls-val" id="ls-wr" style="color:#3fb950">—</div></div>
@@ -275,13 +283,13 @@ button:disabled { opacity: 0.4; cursor: default; }
               <th style="padding:8px 12px;text-align:left">Year</th>
               <th style="padding:8px 12px;text-align:left">Match</th>
               <th style="padding:8px 8px;text-align:center">Score</th>
-              <th style="padding:8px 8px;text-align:center">Draw Odds</th>
+              <th style="padding:8px 8px;text-align:center">Draw Odds ⚠️</th>
               <th style="padding:8px 8px;text-align:center">Bet?</th>
-              <th style="padding:8px 8px;text-align:center">Liability</th>
-              <th style="padding:8px 8px;text-align:center">In-Play Odds</th>
-              <th style="padding:8px 8px;text-align:center">Back Stake</th>
+              <th style="padding:8px 8px;text-align:center">Liability ⚠️</th>
+              <th style="padding:8px 8px;text-align:center">In-Play Odds 🔴</th>
+              <th style="padding:8px 8px;text-align:center">Back Stake 🔴</th>
               <th style="padding:8px 8px;text-align:center">Result</th>
-              <th style="padding:8px 12px;text-align:right">P&L</th>
+              <th style="padding:8px 12px;text-align:right">P&L 🔴</th>
             </tr>
           </thead>
           <tbody id="lab-tbody"></tbody>

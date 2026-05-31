@@ -1,0 +1,1568 @@
+[
+  {
+    "home": "Croatia",
+    "away": "Morocco",
+    "hg": 2,
+    "ag": 1,
+    "draw_odds": 3.75,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "France",
+    "away": "Morocco",
+    "hg": 2,
+    "ag": 0,
+    "draw_odds": 4.0,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Argentina",
+    "away": "Croatia",
+    "hg": 3,
+    "ag": 0,
+    "draw_odds": 3.1,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "England",
+    "away": "France",
+    "hg": 1,
+    "ag": 2,
+    "draw_odds": 3.2,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Morocco",
+    "away": "Portugal",
+    "hg": 1,
+    "ag": 0,
+    "draw_odds": 4.0,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Portugal",
+    "away": "Switzerland",
+    "hg": 6,
+    "ag": 1,
+    "draw_odds": 3.65,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Brazil",
+    "away": "South Korea",
+    "hg": 4,
+    "ag": 1,
+    "draw_odds": 6.6,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "England",
+    "away": "Senegal",
+    "hg": 3,
+    "ag": 0,
+    "draw_odds": 3.95,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "France",
+    "away": "Poland",
+    "hg": 3,
+    "ag": 1,
+    "draw_odds": 5.1,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Argentina",
+    "away": "Australia",
+    "hg": 2,
+    "ag": 1,
+    "draw_odds": 7.0,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Netherlands",
+    "away": "USA",
+    "hg": 3,
+    "ag": 1,
+    "draw_odds": 3.45,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Cameroon",
+    "away": "Brazil",
+    "hg": 1,
+    "ag": 0,
+    "draw_odds": 5.5,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Serbia",
+    "away": "Switzerland",
+    "hg": 2,
+    "ag": 3,
+    "draw_odds": 3.45,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Ghana",
+    "away": "Uruguay",
+    "hg": 0,
+    "ag": 2,
+    "draw_odds": 4.0,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "South Korea",
+    "away": "Portugal",
+    "hg": 2,
+    "ag": 1,
+    "draw_odds": 3.95,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Costa Rica",
+    "away": "Germany",
+    "hg": 2,
+    "ag": 4,
+    "draw_odds": 12.0,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Japan",
+    "away": "Spain",
+    "hg": 2,
+    "ag": 1,
+    "draw_odds": 4.7,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Canada",
+    "away": "Morocco",
+    "hg": 1,
+    "ag": 2,
+    "draw_odds": 3.6,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Croatia",
+    "away": "Belgium",
+    "hg": 0,
+    "ag": 0,
+    "draw_odds": 3.5,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Poland",
+    "away": "Argentina",
+    "hg": 0,
+    "ag": 2,
+    "draw_odds": 4.9,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Saudi Arabia",
+    "away": "Mexico",
+    "hg": 1,
+    "ag": 2,
+    "draw_odds": 4.4,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Australia",
+    "away": "Denmark",
+    "hg": 1,
+    "ag": 0,
+    "draw_odds": 5.1,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Tunisia",
+    "away": "France",
+    "hg": 1,
+    "ag": 0,
+    "draw_odds": 4.1,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Iran",
+    "away": "USA",
+    "hg": 0,
+    "ag": 1,
+    "draw_odds": 3.6,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Wales",
+    "away": "England",
+    "hg": 0,
+    "ag": 3,
+    "draw_odds": 4.6,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Ecuador",
+    "away": "Senegal",
+    "hg": 1,
+    "ag": 2,
+    "draw_odds": 3.15,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Netherlands",
+    "away": "Qatar",
+    "hg": 2,
+    "ag": 0,
+    "draw_odds": 7.8,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Portugal",
+    "away": "Uruguay",
+    "hg": 2,
+    "ag": 0,
+    "draw_odds": 3.5,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Brazil",
+    "away": "Switzerland",
+    "hg": 1,
+    "ag": 0,
+    "draw_odds": 4.4,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "South Korea",
+    "away": "Ghana",
+    "hg": 2,
+    "ag": 3,
+    "draw_odds": 3.2,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Cameroon",
+    "away": "Serbia",
+    "hg": 3,
+    "ag": 3,
+    "draw_odds": 3.95,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Spain",
+    "away": "Germany",
+    "hg": 1,
+    "ag": 1,
+    "draw_odds": 3.5,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Croatia",
+    "away": "Canada",
+    "hg": 4,
+    "ag": 1,
+    "draw_odds": 3.35,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Belgium",
+    "away": "Morocco",
+    "hg": 0,
+    "ag": 2,
+    "draw_odds": 3.45,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Japan",
+    "away": "Costa Rica",
+    "hg": 0,
+    "ag": 1,
+    "draw_odds": 4.5,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Argentina",
+    "away": "Mexico",
+    "hg": 2,
+    "ag": 0,
+    "draw_odds": 4.1,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "France",
+    "away": "Denmark",
+    "hg": 2,
+    "ag": 1,
+    "draw_odds": 3.65,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Poland",
+    "away": "Saudi Arabia",
+    "hg": 2,
+    "ag": 0,
+    "draw_odds": 3.75,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Tunisia",
+    "away": "Australia",
+    "hg": 0,
+    "ag": 1,
+    "draw_odds": 3.55,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "England",
+    "away": "USA",
+    "hg": 0,
+    "ag": 0,
+    "draw_odds": 4.4,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Netherlands",
+    "away": "Ecuador",
+    "hg": 1,
+    "ag": 1,
+    "draw_odds": 3.5,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Qatar",
+    "away": "Senegal",
+    "hg": 1,
+    "ag": 3,
+    "draw_odds": 3.7,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Wales",
+    "away": "Iran",
+    "hg": 0,
+    "ag": 2,
+    "draw_odds": 3.25,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Brazil",
+    "away": "Serbia",
+    "hg": 2,
+    "ag": 0,
+    "draw_odds": 4.7,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Portugal",
+    "away": "Ghana",
+    "hg": 3,
+    "ag": 2,
+    "draw_odds": 5.8,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Uruguay",
+    "away": "South Korea",
+    "hg": 0,
+    "ag": 0,
+    "draw_odds": 3.65,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Switzerland",
+    "away": "Cameroon",
+    "hg": 1,
+    "ag": 0,
+    "draw_odds": 3.6,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Belgium",
+    "away": "Canada",
+    "hg": 1,
+    "ag": 0,
+    "draw_odds": 4.3,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Spain",
+    "away": "Costa Rica",
+    "hg": 7,
+    "ag": 0,
+    "draw_odds": 9.4,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Germany",
+    "away": "Japan",
+    "hg": 1,
+    "ag": 2,
+    "draw_odds": 5.1,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Morocco",
+    "away": "Croatia",
+    "hg": 0,
+    "ag": 0,
+    "draw_odds": 3.35,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "France",
+    "away": "Australia",
+    "hg": 4,
+    "ag": 1,
+    "draw_odds": 7.2,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Mexico",
+    "away": "Poland",
+    "hg": 0,
+    "ag": 0,
+    "draw_odds": 3.2,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Denmark",
+    "away": "Tunisia",
+    "hg": 0,
+    "ag": 0,
+    "draw_odds": 3.95,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Argentina",
+    "away": "Saudi Arabia",
+    "hg": 1,
+    "ag": 2,
+    "draw_odds": 11.0,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "USA",
+    "away": "Wales",
+    "hg": 1,
+    "ag": 1,
+    "draw_odds": 3.2,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Senegal",
+    "away": "Netherlands",
+    "hg": 0,
+    "ag": 2,
+    "draw_odds": 3.8,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "England",
+    "away": "Iran",
+    "hg": 6,
+    "ag": 2,
+    "draw_odds": 4.9,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "Qatar",
+    "away": "Ecuador",
+    "hg": 0,
+    "ag": 2,
+    "draw_odds": 3.2,
+    "year": 2022,
+    "source": "Betfair_Exch"
+  },
+  {
+    "home": "France",
+    "away": "Croatia",
+    "hg": 4,
+    "ag": 2,
+    "draw_odds": 3.5,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Belgium",
+    "away": "England",
+    "hg": 2,
+    "ag": 0,
+    "draw_odds": 4.0,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "France",
+    "away": "Belgium",
+    "hg": 1,
+    "ag": 0,
+    "draw_odds": 3.25,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Sweden",
+    "away": "England",
+    "hg": 0,
+    "ag": 2,
+    "draw_odds": 3.5,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Brazil",
+    "away": "Belgium",
+    "hg": 1,
+    "ag": 2,
+    "draw_odds": 3.55,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Uruguay",
+    "away": "France",
+    "hg": 0,
+    "ag": 2,
+    "draw_odds": 3.26,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Sweden",
+    "away": "Switzerland",
+    "hg": 1,
+    "ag": 0,
+    "draw_odds": 3.01,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Belgium",
+    "away": "Japan",
+    "hg": 3,
+    "ag": 2,
+    "draw_odds": 5.0,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Brazil",
+    "away": "Mexico",
+    "hg": 2,
+    "ag": 0,
+    "draw_odds": 4.65,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Uruguay",
+    "away": "Portugal",
+    "hg": 2,
+    "ag": 1,
+    "draw_odds": 3.05,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "France",
+    "away": "Argentina",
+    "hg": 4,
+    "ag": 3,
+    "draw_odds": 3.2,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "England",
+    "away": "Belgium",
+    "hg": 0,
+    "ag": 1,
+    "draw_odds": 3.0,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Panama",
+    "away": "Tunisia",
+    "hg": 1,
+    "ag": 2,
+    "draw_odds": 3.85,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Japan",
+    "away": "Poland",
+    "hg": 0,
+    "ag": 1,
+    "draw_odds": 3.25,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Senegal",
+    "away": "Colombia",
+    "hg": 0,
+    "ag": 1,
+    "draw_odds": 4.0,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Serbia",
+    "away": "Brazil",
+    "hg": 0,
+    "ag": 2,
+    "draw_odds": 4.85,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Switzerland",
+    "away": "Costa Rica",
+    "hg": 2,
+    "ag": 2,
+    "draw_odds": 3.9,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Mexico",
+    "away": "Sweden",
+    "hg": 0,
+    "ag": 3,
+    "draw_odds": 3.5,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "South Korea",
+    "away": "Germany",
+    "hg": 2,
+    "ag": 0,
+    "draw_odds": 9.2,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Iceland",
+    "away": "Croatia",
+    "hg": 1,
+    "ag": 2,
+    "draw_odds": 4.15,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Nigeria",
+    "away": "Argentina",
+    "hg": 1,
+    "ag": 2,
+    "draw_odds": 5.55,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Australia",
+    "away": "Peru",
+    "hg": 0,
+    "ag": 2,
+    "draw_odds": 3.6,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Denmark",
+    "away": "France",
+    "hg": 0,
+    "ag": 0,
+    "draw_odds": 3.34,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Iran",
+    "away": "Portugal",
+    "hg": 1,
+    "ag": 1,
+    "draw_odds": 4.3,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Spain",
+    "away": "Morocco",
+    "hg": 2,
+    "ag": 2,
+    "draw_odds": 6.12,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Saudi Arabia",
+    "away": "Egypt",
+    "hg": 2,
+    "ag": 1,
+    "draw_odds": 3.85,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Uruguay",
+    "away": "Russia",
+    "hg": 3,
+    "ag": 0,
+    "draw_odds": 3.25,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Poland",
+    "away": "Colombia",
+    "hg": 0,
+    "ag": 3,
+    "draw_odds": 3.77,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Japan",
+    "away": "Senegal",
+    "hg": 2,
+    "ag": 2,
+    "draw_odds": 3.53,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "England",
+    "away": "Panama",
+    "hg": 6,
+    "ag": 1,
+    "draw_odds": 7.0,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Germany",
+    "away": "Sweden",
+    "hg": 2,
+    "ag": 1,
+    "draw_odds": 4.95,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "South Korea",
+    "away": "Mexico",
+    "hg": 1,
+    "ag": 2,
+    "draw_odds": 4.1,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Belgium",
+    "away": "Tunisia",
+    "hg": 5,
+    "ag": 2,
+    "draw_odds": 5.54,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Serbia",
+    "away": "Switzerland",
+    "hg": 1,
+    "ag": 2,
+    "draw_odds": 3.3,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Nigeria",
+    "away": "Iceland",
+    "hg": 2,
+    "ag": 0,
+    "draw_odds": 3.22,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Brazil",
+    "away": "Costa Rica",
+    "hg": 2,
+    "ag": 0,
+    "draw_odds": 7.15,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Argentina",
+    "away": "Croatia",
+    "hg": 0,
+    "ag": 3,
+    "draw_odds": 3.54,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "France",
+    "away": "Peru",
+    "hg": 1,
+    "ag": 0,
+    "draw_odds": 4.1,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Denmark",
+    "away": "Australia",
+    "hg": 1,
+    "ag": 1,
+    "draw_odds": 3.5,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Iran",
+    "away": "Spain",
+    "hg": 0,
+    "ag": 1,
+    "draw_odds": 7.3,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Uruguay",
+    "away": "Saudi Arabia",
+    "hg": 1,
+    "ag": 0,
+    "draw_odds": 7.3,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Portugal",
+    "away": "Morocco",
+    "hg": 1,
+    "ag": 0,
+    "draw_odds": 3.85,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Russia",
+    "away": "Egypt",
+    "hg": 3,
+    "ag": 1,
+    "draw_odds": 3.72,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Poland",
+    "away": "Senegal",
+    "hg": 1,
+    "ag": 2,
+    "draw_odds": 3.2,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Colombia",
+    "away": "Japan",
+    "hg": 1,
+    "ag": 2,
+    "draw_odds": 3.5,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Tunisia",
+    "away": "England",
+    "hg": 1,
+    "ag": 2,
+    "draw_odds": 4.4,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Belgium",
+    "away": "Panama",
+    "hg": 3,
+    "ag": 0,
+    "draw_odds": 7.5,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Sweden",
+    "away": "South Korea",
+    "hg": 1,
+    "ag": 0,
+    "draw_odds": 3.15,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Brazil",
+    "away": "Switzerland",
+    "hg": 1,
+    "ag": 1,
+    "draw_odds": 4.64,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Germany",
+    "away": "Mexico",
+    "hg": 0,
+    "ag": 1,
+    "draw_odds": 4.83,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Costa Rica",
+    "away": "Serbia",
+    "hg": 0,
+    "ag": 1,
+    "draw_odds": 3.55,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Croatia",
+    "away": "Nigeria",
+    "hg": 2,
+    "ag": 0,
+    "draw_odds": 3.9,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Peru",
+    "away": "Denmark",
+    "hg": 0,
+    "ag": 1,
+    "draw_odds": 3.2,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Argentina",
+    "away": "Iceland",
+    "hg": 1,
+    "ag": 1,
+    "draw_odds": 5.65,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "France",
+    "away": "Australia",
+    "hg": 2,
+    "ag": 1,
+    "draw_odds": 7.5,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Portugal",
+    "away": "Spain",
+    "hg": 3,
+    "ag": 3,
+    "draw_odds": 3.37,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Morocco",
+    "away": "Iran",
+    "hg": 0,
+    "ag": 1,
+    "draw_odds": 3.1,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Egypt",
+    "away": "Uruguay",
+    "hg": 0,
+    "ag": 1,
+    "draw_odds": 4.24,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Russia",
+    "away": "Saudi Arabia",
+    "hg": 5,
+    "ag": 0,
+    "draw_odds": 4.5,
+    "year": 2018,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Brazil",
+    "away": "Netherlands",
+    "hg": 0,
+    "ag": 3,
+    "draw_odds": 3.9,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Brazil",
+    "away": "Germany",
+    "hg": 1,
+    "ag": 7,
+    "draw_odds": 3.3,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Argentina",
+    "away": "Belgium",
+    "hg": 1,
+    "ag": 0,
+    "draw_odds": 3.5,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Brazil",
+    "away": "Colombia",
+    "hg": 2,
+    "ag": 1,
+    "draw_odds": 3.95,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "France",
+    "away": "Germany",
+    "hg": 0,
+    "ag": 1,
+    "draw_odds": 3.25,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "France",
+    "away": "Nigeria",
+    "hg": 2,
+    "ag": 0,
+    "draw_odds": 4.85,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Netherlands",
+    "away": "Mexico",
+    "hg": 2,
+    "ag": 1,
+    "draw_odds": 3.65,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Colombia",
+    "away": "Uruguay",
+    "hg": 2,
+    "ag": 0,
+    "draw_odds": 3.55,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Algeria",
+    "away": "Russia",
+    "hg": 1,
+    "ag": 1,
+    "draw_odds": 4.0,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "South Korea",
+    "away": "Belgium",
+    "hg": 0,
+    "ag": 1,
+    "draw_odds": 3.8,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Portugal",
+    "away": "Ghana",
+    "hg": 2,
+    "ag": 1,
+    "draw_odds": 5.25,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "USA",
+    "away": "Germany",
+    "hg": 0,
+    "ag": 1,
+    "draw_odds": 4.33,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Ecuador",
+    "away": "France",
+    "hg": 0,
+    "ag": 0,
+    "draw_odds": 4.33,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Honduras",
+    "away": "Switzerland",
+    "hg": 0,
+    "ag": 3,
+    "draw_odds": 4.8,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Bosnia & Herzegovina",
+    "away": "Iran",
+    "hg": 3,
+    "ag": 1,
+    "draw_odds": 3.75,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Nigeria",
+    "away": "Argentina",
+    "hg": 2,
+    "ag": 3,
+    "draw_odds": 5.0,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Greece",
+    "away": "Ivory Coast",
+    "hg": 2,
+    "ag": 1,
+    "draw_odds": 3.8,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Japan",
+    "away": "Colombia",
+    "hg": 1,
+    "ag": 4,
+    "draw_odds": 3.9,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Costa Rica",
+    "away": "England",
+    "hg": 0,
+    "ag": 0,
+    "draw_odds": 4.33,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Italy",
+    "away": "Uruguay",
+    "hg": 0,
+    "ag": 1,
+    "draw_odds": 3.65,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Cameroon",
+    "away": "Brazil",
+    "hg": 1,
+    "ag": 4,
+    "draw_odds": 11.0,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Croatia",
+    "away": "Mexico",
+    "hg": 1,
+    "ag": 3,
+    "draw_odds": 3.75,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Australia",
+    "away": "Spain",
+    "hg": 0,
+    "ag": 3,
+    "draw_odds": 6.0,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Netherlands",
+    "away": "Chile",
+    "hg": 2,
+    "ag": 0,
+    "draw_odds": 3.85,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "USA",
+    "away": "Portugal",
+    "hg": 2,
+    "ag": 2,
+    "draw_odds": 4.45,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "South Korea",
+    "away": "Algeria",
+    "hg": 2,
+    "ag": 4,
+    "draw_odds": 3.4,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Belgium",
+    "away": "Russia",
+    "hg": 1,
+    "ag": 0,
+    "draw_odds": 3.65,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Nigeria",
+    "away": "Bosnia & Herzegovina",
+    "hg": 1,
+    "ag": 0,
+    "draw_odds": 4.0,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Germany",
+    "away": "Ghana",
+    "hg": 2,
+    "ag": 2,
+    "draw_odds": 6.0,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Argentina",
+    "away": "Iran",
+    "hg": 1,
+    "ag": 0,
+    "draw_odds": 9.9,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Honduras",
+    "away": "Ecuador",
+    "hg": 1,
+    "ag": 2,
+    "draw_odds": 4.5,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Switzerland",
+    "away": "France",
+    "hg": 2,
+    "ag": 5,
+    "draw_odds": 3.6,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Italy",
+    "away": "Costa Rica",
+    "hg": 0,
+    "ag": 1,
+    "draw_odds": 4.8,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Japan",
+    "away": "Greece",
+    "hg": 0,
+    "ag": 0,
+    "draw_odds": 3.7,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Uruguay",
+    "away": "England",
+    "hg": 2,
+    "ag": 1,
+    "draw_odds": 4.2,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Colombia",
+    "away": "Ivory Coast",
+    "hg": 2,
+    "ag": 1,
+    "draw_odds": 3.66,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Cameroon",
+    "away": "Croatia",
+    "hg": 0,
+    "ag": 4,
+    "draw_odds": 4.13,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Spain",
+    "away": "Chile",
+    "hg": 0,
+    "ag": 2,
+    "draw_odds": 5.1,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Australia",
+    "away": "Netherlands",
+    "hg": 2,
+    "ag": 3,
+    "draw_odds": 7.0,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Russia",
+    "away": "South Korea",
+    "hg": 1,
+    "ag": 1,
+    "draw_odds": 3.85,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Brazil",
+    "away": "Mexico",
+    "hg": 0,
+    "ag": 0,
+    "draw_odds": 5.8,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Belgium",
+    "away": "Algeria",
+    "hg": 2,
+    "ag": 1,
+    "draw_odds": 5.7,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Ghana",
+    "away": "USA",
+    "hg": 1,
+    "ag": 2,
+    "draw_odds": 3.65,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Iran",
+    "away": "Nigeria",
+    "hg": 0,
+    "ag": 0,
+    "draw_odds": 3.7,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Germany",
+    "away": "Portugal",
+    "hg": 4,
+    "ag": 0,
+    "draw_odds": 3.75,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Argentina",
+    "away": "Bosnia & Herzegovina",
+    "hg": 2,
+    "ag": 1,
+    "draw_odds": 6.05,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "France",
+    "away": "Honduras",
+    "hg": 3,
+    "ag": 0,
+    "draw_odds": 6.5,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Switzerland",
+    "away": "Ecuador",
+    "hg": 2,
+    "ag": 1,
+    "draw_odds": 3.35,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Ivory Coast",
+    "away": "Japan",
+    "hg": 2,
+    "ag": 1,
+    "draw_odds": 3.47,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "England",
+    "away": "Italy",
+    "hg": 1,
+    "ag": 2,
+    "draw_odds": 3.1,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Uruguay",
+    "away": "Costa Rica",
+    "hg": 1,
+    "ag": 3,
+    "draw_odds": 4.7,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Colombia",
+    "away": "Greece",
+    "hg": 3,
+    "ag": 0,
+    "draw_odds": 3.75,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Chile",
+    "away": "Australia",
+    "hg": 3,
+    "ag": 1,
+    "draw_odds": 4.85,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Spain",
+    "away": "Netherlands",
+    "hg": 1,
+    "ag": 5,
+    "draw_odds": 3.5,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Mexico",
+    "away": "Cameroon",
+    "hg": 1,
+    "ag": 0,
+    "draw_odds": 3.3,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  },
+  {
+    "home": "Brazil",
+    "away": "Croatia",
+    "hg": 3,
+    "ag": 1,
+    "draw_odds": 5.5,
+    "year": 2014,
+    "source": "D-Max/Avg"
+  }
+]

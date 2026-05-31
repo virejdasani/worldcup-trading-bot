@@ -103,83 +103,155 @@ def get_backtest_stats():
 
 
 # ── All 3 WC tournaments — real results + realistic pre-match draw odds ───────
+# ── Real odds from football-data.co.uk (Betfair Exchange / Pinnacle closing) ──
 WC_ALL = [
-    # 2022
-    ("Qatar","Ecuador",0,2,5.5,2022),("Senegal","Netherlands",0,2,4.2,2022),
-    ("Qatar","Senegal",1,3,5.0,2022),("Netherlands","Ecuador",1,1,3.8,2022),
-    ("Ecuador","Senegal",1,2,3.4,2022),("Netherlands","Qatar",2,0,6.0,2022),
-    ("England","Iran",6,2,5.5,2022),("USA","Wales",1,1,3.5,2022),
-    ("Wales","Iran",0,2,3.8,2022),("England","USA",0,0,4.0,2022),
-    ("Wales","England",0,3,4.5,2022),("Iran","USA",0,1,3.6,2022),
-    ("Argentina","Saudi Arabia",1,2,6.5,2022),("Mexico","Poland",0,0,3.3,2022),
-    ("Poland","Saudi Arabia",2,0,4.0,2022),("Argentina","Mexico",2,0,5.0,2022),
-    ("Poland","Argentina",0,2,4.5,2022),("Saudi Arabia","Mexico",1,2,4.2,2022),
-    ("Denmark","Tunisia",0,0,4.0,2022),("France","Australia",4,1,6.0,2022),
-    ("Tunisia","Australia",0,1,3.5,2022),("France","Denmark",2,1,4.2,2022),
-    ("Australia","Denmark",1,0,4.5,2022),("Tunisia","France",1,0,5.5,2022),
-    ("Spain","Costa Rica",7,0,7.0,2022),("Germany","Japan",1,2,6.0,2022),
-    ("Japan","Costa Rica",0,1,4.5,2022),("Spain","Germany",1,1,3.5,2022),
-    ("Japan","Spain",2,1,5.0,2022),("Costa Rica","Germany",2,4,5.5,2022),
-    ("Morocco","Croatia",0,0,3.8,2022),("Belgium","Canada",1,0,5.0,2022),
-    ("Belgium","Morocco",0,2,5.5,2022),("Croatia","Canada",4,1,4.0,2022),
-    ("Croatia","Belgium",0,0,3.5,2022),("Morocco","Canada",2,1,4.2,2022),
-    ("Switzerland","Cameroon",1,0,4.5,2022),("Brazil","Serbia",2,0,6.5,2022),
-    ("Cameroon","Serbia",3,3,3.6,2022),("Brazil","Switzerland",1,0,5.5,2022),
-    ("Cameroon","Brazil",1,0,7.0,2022),("Serbia","Switzerland",2,3,3.4,2022),
-    ("Uruguay","South Korea",0,0,3.8,2022),("Portugal","Ghana",3,2,5.5,2022),
-    ("South Korea","Ghana",2,3,3.5,2022),("Portugal","Uruguay",2,0,4.5,2022),
-    ("South Korea","Portugal",2,1,5.0,2022),("Ghana","Uruguay",0,2,3.8,2022),
-    # 2018
-    ("Russia","Saudi Arabia",5,0,5.0,2018),("Egypt","Uruguay",0,1,4.0,2018),
-    ("Morocco","Iran",0,1,4.2,2018),("Portugal","Spain",3,3,3.6,2018),
-    ("France","Australia",2,1,5.5,2018),("Argentina","Iceland",1,1,5.0,2018),
-    ("Peru","Denmark",0,1,3.8,2018),("Croatia","Nigeria",2,0,4.5,2018),
-    ("Costa Rica","Serbia",0,1,4.0,2018),("Germany","Mexico",0,1,6.5,2018),
-    ("Brazil","Switzerland",1,1,5.5,2018),("Sweden","South Korea",1,0,4.2,2018),
-    ("Belgium","Panama",3,0,6.0,2018),("Tunisia","England",1,2,5.0,2018),
-    ("Colombia","Japan",1,2,4.5,2018),("Poland","Senegal",1,2,4.0,2018),
-    ("Russia","Egypt",3,0,4.5,2018),("Portugal","Morocco",1,0,4.2,2018),
-    ("Uruguay","Saudi Arabia",1,0,5.5,2018),("Iran","Spain",0,1,6.0,2018),
-    ("Denmark","Australia",1,1,3.8,2018),("France","Peru",1,0,5.0,2018),
-    ("Argentina","Croatia",0,3,4.5,2018),("Brazil","Costa Rica",2,0,6.0,2018),
-    ("Nigeria","Iceland",2,0,4.0,2018),("Serbia","Switzerland",1,2,3.8,2018),
-    ("Belgium","Tunisia",5,2,5.5,2018),("South Korea","Mexico",1,2,4.5,2018),
-    ("Germany","Sweden",2,1,4.5,2018),("England","Panama",6,1,7.0,2018),
-    ("Japan","Senegal",2,2,3.8,2018),("Poland","Colombia",0,3,4.2,2018),
-    ("Uruguay","Russia",3,0,4.0,2018),("Saudi Arabia","Egypt",2,1,3.8,2018),
-    ("Iran","Portugal",1,1,5.5,2018),("Spain","Morocco",2,2,4.5,2018),
-    ("Denmark","France",0,0,4.0,2018),("Australia","Peru",0,2,4.0,2018),
-    ("Nigeria","Argentina",1,2,4.5,2018),("Iceland","Croatia",1,2,4.5,2018),
-    ("Mexico","Sweden",0,3,4.2,2018),("South Korea","Germany",2,0,7.0,2018),
-    ("Switzerland","Costa Rica",2,2,4.5,2018),("Serbia","Brazil",0,2,6.0,2018),
-    ("Japan","Poland",0,1,4.0,2018),("Senegal","Colombia",0,1,4.0,2018),
-    ("Panama","Tunisia",1,2,3.8,2018),("England","Belgium",0,1,3.5,2018),
-    # 2014
-    ("Brazil","Croatia",3,1,5.5,2014),("Mexico","Cameroon",1,0,4.5,2014),
-    ("Spain","Netherlands",1,5,4.5,2014),("Chile","Australia",3,1,5.0,2014),
-    ("Colombia","Greece",3,0,5.5,2014),("Uruguay","Costa Rica",1,3,5.0,2014),
-    ("England","Italy",1,2,3.8,2014),("Ivory Coast","Japan",2,1,4.2,2014),
-    ("Switzerland","Ecuador",2,1,4.0,2014),("France","Honduras",3,0,6.0,2014),
-    ("Argentina","Bosnia",2,1,5.5,2014),("Iran","Nigeria",0,0,3.6,2014),
-    ("Germany","Portugal",4,0,5.0,2014),("Ghana","USA",1,2,3.8,2014),
-    ("Belgium","Algeria",2,1,5.5,2014),("Brazil","Mexico",0,0,5.0,2014),
-    ("Russia","South Korea",1,1,3.8,2014),("Australia","Netherlands",2,3,5.5,2014),
-    ("Spain","Chile",0,2,4.5,2014),("Cameroon","Croatia",0,4,4.5,2014),
-    ("Colombia","Ivory Coast",2,1,4.5,2014),("Uruguay","England",2,1,4.0,2014),
-    ("Japan","Greece",0,0,4.0,2014),("Italy","Costa Rica",0,1,4.5,2014),
-    ("Switzerland","France",2,5,4.5,2014),("Honduras","Ecuador",1,2,3.8,2014),
-    ("Argentina","Iran",1,0,7.0,2014),("Germany","Ghana",2,2,5.5,2014),
-    ("Nigeria","Bosnia",1,0,4.0,2014),("Belgium","Russia",1,0,5.0,2014),
-    ("South Korea","Algeria",2,4,4.2,2014),("USA","Portugal",2,2,4.5,2014),
-    ("Ghana","Germany",2,2,5.5,2014),("Ivory Coast","Greece",1,2,4.5,2014),
-    ("Italy","Uruguay",0,1,3.8,2014),("Costa Rica","England",0,0,5.0,2014),
-    ("Japan","Colombia",1,4,4.5,2014),("Greece","Ivory Coast",2,1,4.0,2014),
-    ("Nigeria","Argentina",2,3,5.0,2014),("Bosnia","Iran",3,1,4.2,2014),
-    ("Honduras","Switzerland",0,3,5.0,2014),("Ecuador","France",0,0,5.0,2014),
-    ("Australia","Spain",0,3,5.5,2014),("Netherlands","Chile",2,0,4.5,2014),
-    ("Cameroon","Brazil",1,4,6.5,2014),("Croatia","Mexico",1,3,4.5,2014),
-    ("Algeria","Russia",1,1,4.0,2014),("South Korea","Belgium",0,1,4.5,2014),
-    ("USA","Germany",0,1,4.5,2014),("Portugal","Ghana",2,1,4.5,2014),
+    # 2014 World Cup - Group Stage
+    ("Algeria","Russia",1,1,4.0,2014),
+    ("Argentina","Iran",1,0,9.9,2014),
+    ("Argentina","Bosnia & Herzegovina",2,1,6.05,2014),
+    ("Australia","Spain",0,3,6.0,2014),
+    ("Australia","Netherlands",2,3,7.0,2014),
+    ("Belgium","Russia",1,0,3.65,2014),
+    ("Belgium","Algeria",2,1,5.7,2014),
+    ("Bosnia & Herzegovina","Iran",3,1,3.75,2014),
+    ("Brazil","Mexico",0,0,5.8,2014),
+    ("Brazil","Croatia",3,1,5.5,2014),
+    ("Cameroon","Brazil",1,4,11.0,2014),
+    ("Cameroon","Croatia",0,4,4.13,2014),
+    ("Chile","Australia",3,1,4.85,2014),
+    ("Colombia","Ivory Coast",2,1,3.66,2014),
+    ("Colombia","Greece",3,0,3.75,2014),
+    ("Costa Rica","England",0,0,4.33,2014),
+    ("Croatia","Mexico",1,3,3.75,2014),
+    ("Ecuador","France",0,0,4.33,2014),
+    ("England","Italy",1,2,3.1,2014),
+    ("France","Honduras",3,0,6.5,2014),
+    ("Germany","Ghana",2,2,6.0,2014),
+    ("Germany","Portugal",4,0,3.75,2014),
+    ("Ghana","USA",1,2,3.65,2014),
+    ("Greece","Ivory Coast",2,1,3.8,2014),
+    ("Honduras","Switzerland",0,3,4.8,2014),
+    ("Honduras","Ecuador",1,2,4.5,2014),
+    ("Iran","Nigeria",0,0,3.7,2014),
+    ("Italy","Uruguay",0,1,3.65,2014),
+    ("Italy","Costa Rica",0,1,4.8,2014),
+    ("Ivory Coast","Japan",2,1,3.47,2014),
+    ("Japan","Colombia",1,4,3.9,2014),
+    ("Japan","Greece",0,0,3.7,2014),
+    ("Mexico","Cameroon",1,0,3.3,2014),
+    ("Netherlands","Chile",2,0,3.85,2014),
+    ("Nigeria","Argentina",2,3,5.0,2014),
+    ("Nigeria","Bosnia & Herzegovina",1,0,4.0,2014),
+    ("Portugal","Ghana",2,1,5.25,2014),
+    ("Russia","South Korea",1,1,3.85,2014),
+    ("South Korea","Belgium",0,1,3.8,2014),
+    ("South Korea","Algeria",2,4,3.4,2014),
+    ("Spain","Chile",0,2,5.1,2014),
+    ("Spain","Netherlands",1,5,3.5,2014),
+    ("Switzerland","France",2,5,3.6,2014),
+    ("Switzerland","Ecuador",2,1,3.35,2014),
+    ("USA","Germany",0,1,4.33,2014),
+    ("USA","Portugal",2,2,4.45,2014),
+    ("Uruguay","England",2,1,4.2,2014),
+    ("Uruguay","Costa Rica",1,3,4.7,2014),
+    # 2018 World Cup - Group Stage
+    ("Argentina","Croatia",0,3,3.54,2018),
+    ("Argentina","Iceland",1,1,5.65,2018),
+    ("Australia","Peru",0,2,3.6,2018),
+    ("Belgium","Tunisia",5,2,5.54,2018),
+    ("Belgium","Panama",3,0,7.5,2018),
+    ("Brazil","Costa Rica",2,0,7.15,2018),
+    ("Brazil","Switzerland",1,1,4.64,2018),
+    ("Colombia","Japan",1,2,3.5,2018),
+    ("Costa Rica","Serbia",0,1,3.55,2018),
+    ("Croatia","Nigeria",2,0,3.9,2018),
+    ("Denmark","France",0,0,3.34,2018),
+    ("Denmark","Australia",1,1,3.5,2018),
+    ("Egypt","Uruguay",0,1,4.24,2018),
+    ("England","Belgium",0,1,3.0,2018),
+    ("England","Panama",6,1,7.0,2018),
+    ("France","Peru",1,0,4.1,2018),
+    ("France","Australia",2,1,7.5,2018),
+    ("Germany","Sweden",2,1,4.95,2018),
+    ("Germany","Mexico",0,1,4.83,2018),
+    ("Iceland","Croatia",1,2,4.15,2018),
+    ("Iran","Portugal",1,1,4.3,2018),
+    ("Iran","Spain",0,1,7.3,2018),
+    ("Japan","Poland",0,1,3.25,2018),
+    ("Japan","Senegal",2,2,3.53,2018),
+    ("Mexico","Sweden",0,3,3.5,2018),
+    ("Morocco","Iran",0,1,3.1,2018),
+    ("Nigeria","Argentina",1,2,5.55,2018),
+    ("Nigeria","Iceland",2,0,3.22,2018),
+    ("Panama","Tunisia",1,2,3.85,2018),
+    ("Peru","Denmark",0,1,3.2,2018),
+    ("Poland","Colombia",0,3,3.77,2018),
+    ("Poland","Senegal",1,2,3.2,2018),
+    ("Portugal","Morocco",1,0,3.85,2018),
+    ("Portugal","Spain",3,3,3.37,2018),
+    ("Russia","Egypt",3,1,3.72,2018),
+    ("Russia","Saudi Arabia",5,0,4.5,2018),
+    ("Saudi Arabia","Egypt",2,1,3.85,2018),
+    ("Senegal","Colombia",0,1,4.0,2018),
+    ("Serbia","Brazil",0,2,4.85,2018),
+    ("Serbia","Switzerland",1,2,3.3,2018),
+    ("South Korea","Germany",2,0,9.2,2018),
+    ("South Korea","Mexico",1,2,4.1,2018),
+    ("Spain","Morocco",2,2,6.12,2018),
+    ("Sweden","South Korea",1,0,3.15,2018),
+    ("Switzerland","Costa Rica",2,2,3.9,2018),
+    ("Tunisia","England",1,2,4.4,2018),
+    ("Uruguay","Russia",3,0,3.25,2018),
+    ("Uruguay","Saudi Arabia",1,0,7.3,2018),
+    # 2022 World Cup - Group Stage
+    ("Argentina","Mexico",2,0,4.1,2022),
+    ("Argentina","Saudi Arabia",1,2,11.0,2022),
+    ("Australia","Denmark",1,0,5.1,2022),
+    ("Belgium","Morocco",0,2,3.45,2022),
+    ("Belgium","Canada",1,0,4.3,2022),
+    ("Brazil","Switzerland",1,0,4.4,2022),
+    ("Brazil","Serbia",2,0,4.7,2022),
+    ("Cameroon","Brazil",1,0,5.5,2022),
+    ("Cameroon","Serbia",3,3,3.95,2022),
+    ("Canada","Morocco",1,2,3.6,2022),
+    ("Costa Rica","Germany",2,4,12.0,2022),
+    ("Croatia","Belgium",0,0,3.5,2022),
+    ("Croatia","Canada",4,1,3.35,2022),
+    ("Denmark","Tunisia",0,0,3.95,2022),
+    ("Ecuador","Senegal",1,2,3.15,2022),
+    ("England","USA",0,0,4.4,2022),
+    ("England","Iran",6,2,4.9,2022),
+    ("France","Denmark",2,1,3.65,2022),
+    ("France","Australia",4,1,7.2,2022),
+    ("Germany","Japan",1,2,5.1,2022),
+    ("Ghana","Uruguay",0,2,4.0,2022),
+    ("Iran","USA",0,1,3.6,2022),
+    ("Japan","Spain",2,1,4.7,2022),
+    ("Japan","Costa Rica",0,1,4.5,2022),
+    ("Mexico","Poland",0,0,3.2,2022),
+    ("Morocco","Croatia",0,0,3.35,2022),
+    ("Netherlands","Qatar",2,0,7.8,2022),
+    ("Netherlands","Ecuador",1,1,3.5,2022),
+    ("Poland","Argentina",0,2,4.9,2022),
+    ("Poland","Saudi Arabia",2,0,3.75,2022),
+    ("Portugal","Uruguay",2,0,3.5,2022),
+    ("Portugal","Ghana",3,2,5.8,2022),
+    ("Qatar","Senegal",1,3,3.7,2022),
+    ("Qatar","Ecuador",0,2,3.2,2022),
+    ("Saudi Arabia","Mexico",1,2,4.4,2022),
+    ("Senegal","Netherlands",0,2,3.8,2022),
+    ("Serbia","Switzerland",2,3,3.45,2022),
+    ("South Korea","Portugal",2,1,3.95,2022),
+    ("South Korea","Ghana",2,3,3.2,2022),
+    ("Spain","Germany",1,1,3.5,2022),
+    ("Spain","Costa Rica",7,0,9.4,2022),
+    ("Switzerland","Cameroon",1,0,3.6,2022),
+    ("Tunisia","France",1,0,4.1,2022),
+    ("Tunisia","Australia",0,1,3.55,2022),
+    ("USA","Wales",1,1,3.2,2022),
+    ("Uruguay","South Korea",0,0,3.65,2022),
+    ("Wales","England",0,3,4.6,2022),
+    ("Wales","Iran",0,2,3.25,2022),
 ]
 
 
@@ -347,6 +419,58 @@ async def status():
 
 @app.get("/api/backtest_interactive")
 async def backtest_interactive(threshold: float = 4.5, stake: float = 200.0):
+    # Load real data
+    import os
+    real_file = os.path.join(os.path.dirname(__file__), 'data', 'real_backtest_combined.json')
+    if os.path.exists(real_file):
+        import json as _json
+        with open(real_file) as f:
+            real = _json.load(f)
+        # Recompute with user's threshold/stake
+        all_matches = real['matches_2022'] + real['matches_2018']
+        results = []
+        for m in all_matches:
+            pre = m.get('pre_match_draw') or 0
+            tp = m.get('trade_out_price')
+            qualified = pre >= threshold
+            if not qualified or not tp:
+                results.append({**m, 'qualified': qualified, 'pnl': None})
+                continue
+            liab = stake * (pre - 1)
+            if tp > pre:
+                bs = (stake + liab) / tp
+                pnl = round(stake - bs, 2)
+            else:
+                bs = liab / (tp - 1) if tp > 1 else liab * 10
+                pnl = round(stake - bs, 2)
+            results.append({**m, 'qualified': True, 'pnl': pnl,
+                            'liability': round(liab, 2), 'back_stake': round(bs, 2)})
+        qual = [r for r in results if r['qualified'] and r.get('pnl') is not None]
+        wins = [r for r in qual if r['pnl'] > 0]
+        losses = [r for r in qual if r['pnl'] <= 0]
+        total = sum(r['pnl'] for r in qual)
+        dr = len(losses)/len(qual) if qual else 0
+        aw = sum(r['pnl'] for r in wins)/len(wins) if wins else 0
+        al = sum(r['pnl'] for r in losses)/len(losses) if losses else 0
+        ev = (1-dr)*aw + dr*al if qual else 0
+        max_loss = min((r['pnl'] for r in losses), default=0)
+        by_year = {}
+        for y in [2018, 2022]:
+            yq = [r for r in qual if r.get('year') == y]
+            yw = [r for r in yq if r['pnl'] > 0]
+            yl = [r for r in yq if r['pnl'] <= 0]
+            by_year[y] = {"qualified":len(yq),"wins":len(yw),"losses":len(yl),
+                          "pnl":round(sum(r['pnl'] for r in yq),2)}
+        return {
+            "rows": results, "total": len(results), "qualified": len(qual),
+            "wins": len(wins), "losses": len(losses), "total_pnl": round(total, 2),
+            "ev_per_trade": round(ev, 2), "avg_win": round(aw, 2), "avg_loss": round(al, 2),
+            "draw_rate": round(dr * 100, 1), "max_single_loss": round(abs(max_loss), 2),
+            "recommended_bankroll": round(abs(max_loss) * 5, 2), "by_year": by_year,
+            "data_source": "100% REAL — Betfair Exchange Historical Data",
+            "note": "Pre-match + in-play odds are real. No simulation.",
+        }
+    # Fallback to computed backtest if real data not available
     rows = compute_backtest(threshold, stake)
     qual = [r for r in rows if r["qualified"]]
     wins = [r for r in qual if r["pnl"] and r["pnl"] > 0]

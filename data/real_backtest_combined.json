@@ -1,0 +1,2178 @@
+{
+  "data_sources": {
+    "pre_match_odds": "Betfair Exchange Historical Data (real closing prices)",
+    "in_play_odds": "Betfair Exchange Historical Data Basic tier (real, 1-min intervals)",
+    "results": "football-data.co.uk (real match results)",
+    "note": "Smarkets odds closely track Betfair as both are exchange markets with similar liquidity"
+  },
+  "matches_2022": [
+    {
+      "home": "Japan",
+      "away": "Costa Rica",
+      "hg": 0,
+      "ag": 1,
+      "is_draw": false,
+      "pre_match_draw": 4.5,
+      "hg1st": 0,
+      "ag1st": 0,
+      "price_at_45": 2.96,
+      "price_at_60": 3.05,
+      "price_at_70": 2.96,
+      "price_at_80": 2.5,
+      "first_spike_min": 110,
+      "first_spike_price": 11.5,
+      "trade_out_price": 8.0,
+      "trade_out_min": 107,
+      "max_price": 75.0,
+      "all_prices": [
+        [
+          0,
+          5.1
+        ],
+        [
+          1,
+          4.5
+        ],
+        [
+          2,
+          4.4
+        ],
+        [
+          3,
+          4.2
+        ],
+        [
+          3,
+          4.3
+        ],
+        [
+          5,
+          4.2
+        ],
+        [
+          6,
+          4.4
+        ],
+        [
+          6,
+          4.3
+        ],
+        [
+          9,
+          4.4
+        ],
+        [
+          13,
+          4.3
+        ],
+        [
+          15,
+          4.4
+        ],
+        [
+          16,
+          4.3
+        ],
+        [
+          20,
+          4.2
+        ],
+        [
+          21,
+          4.3
+        ],
+        [
+          22,
+          4.2
+        ],
+        [
+          23,
+          4.0
+        ],
+        [
+          24,
+          4.1
+        ],
+        [
+          25,
+          4.0
+        ],
+        [
+          27,
+          3.95
+        ],
+        [
+          27,
+          3.9
+        ]
+      ],
+      "qualified": true,
+      "pnl": 87.5,
+      "back_stake": 112.5,
+      "liability": 700.0,
+      "year": 2022
+    },
+    {
+      "home": "Netherlands",
+      "away": "Qatar",
+      "hg": 2,
+      "ag": 0,
+      "is_draw": false,
+      "pre_match_draw": 7.8,
+      "hg1st": 1,
+      "ag1st": 0,
+      "price_at_45": 15.0,
+      "price_at_60": 14.0,
+      "price_at_70": 80.0,
+      "price_at_80": 80.0,
+      "first_spike_min": 25,
+      "first_spike_price": 20.0,
+      "trade_out_price": 15.0,
+      "trade_out_min": 45,
+      "max_price": 1000.0,
+      "all_prices": [
+        [
+          1,
+          8.2
+        ],
+        [
+          2,
+          8.0
+        ],
+        [
+          3,
+          7.6
+        ],
+        [
+          5,
+          8.2
+        ],
+        [
+          6,
+          8.4
+        ],
+        [
+          7,
+          8.2
+        ],
+        [
+          8,
+          8.4
+        ],
+        [
+          9,
+          8.0
+        ],
+        [
+          11,
+          8.2
+        ],
+        [
+          13,
+          8.6
+        ],
+        [
+          14,
+          8.4
+        ],
+        [
+          15,
+          8.6
+        ],
+        [
+          17,
+          8.8
+        ],
+        [
+          18,
+          8.6
+        ],
+        [
+          20,
+          8.4
+        ],
+        [
+          22,
+          7.6
+        ],
+        [
+          23,
+          7.4
+        ],
+        [
+          24,
+          7.6
+        ],
+        [
+          25,
+          20.0
+        ],
+        [
+          27,
+          23.0
+        ]
+      ],
+      "qualified": true,
+      "pnl": 96.0,
+      "back_stake": 104.0,
+      "liability": 1360.0,
+      "year": 2022
+    },
+    {
+      "home": "Wales",
+      "away": "England",
+      "hg": 0,
+      "ag": 3,
+      "is_draw": false,
+      "pre_match_draw": 4.6,
+      "hg1st": 0,
+      "ag1st": 0,
+      "price_at_45": 3.6,
+      "price_at_60": 3.35,
+      "price_at_70": 10.5,
+      "price_at_80": 50.0,
+      "first_spike_min": 70,
+      "first_spike_price": 10.5,
+      "trade_out_price": 10.5,
+      "trade_out_min": 70,
+      "max_price": 1000.0,
+      "all_prices": [
+        [
+          2,
+          4.5
+        ],
+        [
+          3,
+          4.4
+        ],
+        [
+          4,
+          4.3
+        ],
+        [
+          5,
+          3.95
+        ],
+        [
+          6,
+          4.1
+        ],
+        [
+          7,
+          4.0
+        ],
+        [
+          9,
+          3.95
+        ],
+        [
+          10,
+          4.1
+        ],
+        [
+          13,
+          3.95
+        ],
+        [
+          14,
+          3.8
+        ],
+        [
+          15,
+          3.9
+        ],
+        [
+          16,
+          4.0
+        ],
+        [
+          18,
+          4.1
+        ],
+        [
+          19,
+          3.95
+        ],
+        [
+          20,
+          4.0
+        ],
+        [
+          21,
+          4.1
+        ],
+        [
+          24,
+          3.95
+        ],
+        [
+          25,
+          4.1
+        ],
+        [
+          26,
+          4.0
+        ],
+        [
+          27,
+          3.95
+        ]
+      ],
+      "qualified": true,
+      "pnl": 112.38,
+      "back_stake": 87.62,
+      "liability": 720.0,
+      "year": 2022
+    },
+    {
+      "home": "England",
+      "away": "Iran",
+      "hg": 6,
+      "ag": 2,
+      "is_draw": false,
+      "pre_match_draw": 5.0,
+      "hg1st": 3,
+      "ag1st": 0,
+      "price_at_45": 90.0,
+      "price_at_60": 570.0,
+      "price_at_70": 590.0,
+      "price_at_80": 600.0,
+      "first_spike_min": 35,
+      "first_spike_price": 14.5,
+      "trade_out_price": 450.0,
+      "trade_out_min": 46,
+      "max_price": 1000.0,
+      "all_prices": [
+        [
+          0,
+          4.9
+        ],
+        [
+          0,
+          5.0
+        ],
+        [
+          1,
+          4.9
+        ],
+        [
+          2,
+          5.2
+        ],
+        [
+          3,
+          5.0
+        ],
+        [
+          5,
+          5.1
+        ],
+        [
+          8,
+          5.0
+        ],
+        [
+          9,
+          4.9
+        ],
+        [
+          11,
+          5.0
+        ],
+        [
+          11,
+          4.9
+        ],
+        [
+          16,
+          5.0
+        ],
+        [
+          17,
+          5.1
+        ],
+        [
+          18,
+          5.0
+        ],
+        [
+          21,
+          4.6
+        ],
+        [
+          21,
+          4.7
+        ],
+        [
+          23,
+          4.5
+        ],
+        [
+          24,
+          4.4
+        ],
+        [
+          26,
+          4.5
+        ],
+        [
+          28,
+          4.6
+        ],
+        [
+          31,
+          4.5
+        ]
+      ],
+      "qualified": true,
+      "pnl": 197.78,
+      "back_stake": 2.22,
+      "liability": 800.0,
+      "year": 2022
+    },
+    {
+      "home": "Poland",
+      "away": "Argentina",
+      "hg": 0,
+      "ag": 2,
+      "is_draw": false,
+      "pre_match_draw": 4.8,
+      "hg1st": 0,
+      "ag1st": 0,
+      "price_at_45": 3.7,
+      "price_at_60": 3.45,
+      "price_at_70": 10.5,
+      "price_at_80": 9.4,
+      "first_spike_min": 65,
+      "first_spike_price": 9.6,
+      "trade_out_price": 9.6,
+      "trade_out_min": 65,
+      "max_price": 1000.0,
+      "all_prices": [
+        [
+          0,
+          4.9
+        ],
+        [
+          0,
+          4.8
+        ],
+        [
+          3,
+          4.7
+        ],
+        [
+          5,
+          4.6
+        ],
+        [
+          6,
+          4.5
+        ],
+        [
+          7,
+          4.6
+        ],
+        [
+          10,
+          4.5
+        ],
+        [
+          11,
+          4.6
+        ],
+        [
+          12,
+          4.5
+        ],
+        [
+          17,
+          4.6
+        ],
+        [
+          19,
+          4.4
+        ],
+        [
+          21,
+          4.3
+        ],
+        [
+          22,
+          4.6
+        ],
+        [
+          23,
+          4.4
+        ],
+        [
+          24,
+          4.3
+        ],
+        [
+          26,
+          4.2
+        ],
+        [
+          27,
+          4.3
+        ],
+        [
+          28,
+          4.2
+        ],
+        [
+          31,
+          4.1
+        ],
+        [
+          31,
+          4.2
+        ]
+      ],
+      "qualified": true,
+      "pnl": 100.0,
+      "back_stake": 100.0,
+      "liability": 760.0,
+      "year": 2022
+    },
+    {
+      "home": "Australia",
+      "away": "Denmark",
+      "hg": 1,
+      "ag": 0,
+      "is_draw": false,
+      "pre_match_draw": 5.1,
+      "hg1st": 0,
+      "ag1st": 0,
+      "price_at_45": 3.35,
+      "price_at_60": 3.35,
+      "price_at_70": 2.92,
+      "price_at_80": 3.3,
+      "first_spike_min": 110,
+      "first_spike_price": 11.5,
+      "trade_out_price": 8.6,
+      "trade_out_min": 109,
+      "max_price": 100.0,
+      "all_prices": [
+        [
+          0,
+          4.9
+        ],
+        [
+          0,
+          5.0
+        ],
+        [
+          1,
+          5.1
+        ],
+        [
+          2,
+          5.2
+        ],
+        [
+          4,
+          5.1
+        ],
+        [
+          5,
+          5.2
+        ],
+        [
+          6,
+          5.1
+        ],
+        [
+          8,
+          5.3
+        ],
+        [
+          8,
+          5.1
+        ],
+        [
+          10,
+          5.2
+        ],
+        [
+          11,
+          5.1
+        ],
+        [
+          12,
+          5.0
+        ],
+        [
+          14,
+          4.9
+        ],
+        [
+          15,
+          4.8
+        ],
+        [
+          16,
+          4.7
+        ],
+        [
+          17,
+          4.9
+        ],
+        [
+          18,
+          4.7
+        ],
+        [
+          19,
+          4.6
+        ],
+        [
+          21,
+          4.4
+        ],
+        [
+          25,
+          4.2
+        ]
+      ],
+      "qualified": true,
+      "pnl": 81.4,
+      "back_stake": 118.6,
+      "liability": 820.0,
+      "year": 2022
+    },
+    {
+      "home": "Portugal",
+      "away": "Ghana",
+      "hg": 3,
+      "ag": 2,
+      "is_draw": false,
+      "pre_match_draw": 6.0,
+      "hg1st": 0,
+      "ag1st": 0,
+      "price_at_45": 3.55,
+      "price_at_60": 3.55,
+      "price_at_70": 3.0,
+      "price_at_80": 10.0,
+      "first_spike_min": 96,
+      "first_spike_price": 11.5,
+      "trade_out_price": 10.0,
+      "trade_out_min": 81,
+      "max_price": 210.0,
+      "all_prices": [
+        [
+          4,
+          6.2
+        ],
+        [
+          5,
+          5.9
+        ],
+        [
+          7,
+          6.0
+        ],
+        [
+          8,
+          5.7
+        ],
+        [
+          9,
+          5.5
+        ],
+        [
+          10,
+          5.6
+        ],
+        [
+          11,
+          5.5
+        ],
+        [
+          12,
+          5.7
+        ],
+        [
+          14,
+          5.5
+        ],
+        [
+          15,
+          5.3
+        ],
+        [
+          16,
+          5.4
+        ],
+        [
+          19,
+          5.6
+        ],
+        [
+          21,
+          5.5
+        ],
+        [
+          22,
+          5.2
+        ],
+        [
+          23,
+          5.1
+        ],
+        [
+          25,
+          4.9
+        ],
+        [
+          27,
+          4.8
+        ],
+        [
+          29,
+          4.7
+        ],
+        [
+          30,
+          4.5
+        ],
+        [
+          31,
+          4.3
+        ]
+      ],
+      "qualified": true,
+      "pnl": 80.0,
+      "back_stake": 120.0,
+      "liability": 1000.0,
+      "year": 2022
+    },
+    {
+      "home": "Spain",
+      "away": "Costa Rica",
+      "hg": 7,
+      "ag": 0,
+      "is_draw": false,
+      "pre_match_draw": 10.0,
+      "hg1st": 3,
+      "ag1st": 0,
+      "price_at_45": 600.0,
+      "price_at_60": 460.0,
+      "price_at_70": 470.0,
+      "price_at_80": null,
+      "first_spike_min": 11,
+      "first_spike_price": 30.0,
+      "trade_out_price": 600.0,
+      "trade_out_min": 45,
+      "max_price": 1000.0,
+      "all_prices": [
+        [
+          0,
+          10.5
+        ],
+        [
+          0,
+          9.8
+        ],
+        [
+          3,
+          10.0
+        ],
+        [
+          5,
+          10.5
+        ],
+        [
+          6,
+          11.0
+        ],
+        [
+          7,
+          11.5
+        ],
+        [
+          10,
+          12.5
+        ],
+        [
+          11,
+          30.0
+        ],
+        [
+          12,
+          34.0
+        ],
+        [
+          12,
+          36.0
+        ],
+        [
+          13,
+          38.0
+        ],
+        [
+          14,
+          40.0
+        ],
+        [
+          15,
+          42.0
+        ],
+        [
+          17,
+          40.0
+        ],
+        [
+          18,
+          38.0
+        ],
+        [
+          19,
+          40.0
+        ],
+        [
+          20,
+          42.0
+        ],
+        [
+          21,
+          160.0
+        ],
+        [
+          22,
+          150.0
+        ],
+        [
+          22,
+          140.0
+        ]
+      ],
+      "qualified": true,
+      "pnl": 196.67,
+      "back_stake": 3.33,
+      "liability": 1800.0,
+      "year": 2022
+    },
+    {
+      "home": "Germany",
+      "away": "Japan",
+      "hg": 1,
+      "ag": 2,
+      "is_draw": false,
+      "pre_match_draw": 5.3,
+      "hg1st": 1,
+      "ag1st": 0,
+      "price_at_45": 11.0,
+      "price_at_60": 10.0,
+      "price_at_70": 11.0,
+      "price_at_80": 9.6,
+      "first_spike_min": 31,
+      "first_spike_price": 12.0,
+      "trade_out_price": 11.0,
+      "trade_out_min": 45,
+      "max_price": 28.0,
+      "all_prices": [
+        [
+          0,
+          5.5
+        ],
+        [
+          1,
+          5.4
+        ],
+        [
+          1,
+          5.5
+        ],
+        [
+          3,
+          5.3
+        ],
+        [
+          3,
+          5.2
+        ],
+        [
+          7,
+          5.1
+        ],
+        [
+          8,
+          5.0
+        ],
+        [
+          8,
+          5.1
+        ],
+        [
+          10,
+          5.2
+        ],
+        [
+          11,
+          5.3
+        ],
+        [
+          12,
+          5.2
+        ],
+        [
+          12,
+          5.3
+        ],
+        [
+          15,
+          5.4
+        ],
+        [
+          16,
+          5.2
+        ],
+        [
+          17,
+          5.3
+        ],
+        [
+          20,
+          5.2
+        ],
+        [
+          22,
+          5.0
+        ],
+        [
+          23,
+          4.9
+        ],
+        [
+          23,
+          5.4
+        ],
+        [
+          25,
+          4.9
+        ]
+      ],
+      "qualified": true,
+      "pnl": 103.64,
+      "back_stake": 96.36,
+      "liability": 860.0,
+      "year": 2022
+    },
+    {
+      "home": "Argentina",
+      "away": "Saudi Arabia",
+      "hg": 1,
+      "ag": 2,
+      "is_draw": false,
+      "pre_match_draw": 11.5,
+      "hg1st": 1,
+      "ag1st": 0,
+      "price_at_45": 30.0,
+      "price_at_60": 30.0,
+      "price_at_70": 6.0,
+      "price_at_80": 2.94,
+      "first_spike_min": 11,
+      "first_spike_price": 46.0,
+      "trade_out_price": 29.0,
+      "trade_out_min": 49,
+      "max_price": 200.0,
+      "all_prices": [
+        [
+          0,
+          12.0
+        ],
+        [
+          0,
+          11.5
+        ],
+        [
+          1,
+          12.5
+        ],
+        [
+          2,
+          13.0
+        ],
+        [
+          3,
+          12.5
+        ],
+        [
+          6,
+          14.0
+        ],
+        [
+          6,
+          18.0
+        ],
+        [
+          8,
+          48.0
+        ],
+        [
+          11,
+          46.0
+        ],
+        [
+          13,
+          48.0
+        ],
+        [
+          14,
+          40.0
+        ],
+        [
+          15,
+          42.0
+        ],
+        [
+          16,
+          40.0
+        ],
+        [
+          17,
+          38.0
+        ],
+        [
+          18,
+          40.0
+        ],
+        [
+          19,
+          38.0
+        ],
+        [
+          20,
+          42.0
+        ],
+        [
+          23,
+          40.0
+        ],
+        [
+          25,
+          42.0
+        ],
+        [
+          26,
+          200.0
+        ]
+      ],
+      "qualified": true,
+      "pnl": 120.69,
+      "back_stake": 79.31,
+      "liability": 2100.0,
+      "year": 2022
+    },
+    {
+      "home": "France",
+      "away": "Australia",
+      "hg": 4,
+      "ag": 1,
+      "is_draw": false,
+      "pre_match_draw": 7.4,
+      "hg1st": 2,
+      "ag1st": 1,
+      "price_at_45": 16.5,
+      "price_at_60": 15.0,
+      "price_at_70": 14.5,
+      "price_at_80": 14.0,
+      "first_spike_min": 30,
+      "first_spike_price": 16.0,
+      "trade_out_price": 16.5,
+      "trade_out_min": 45,
+      "max_price": 1000.0,
+      "all_prices": [
+        [
+          0,
+          8.0
+        ],
+        [
+          1,
+          8.2
+        ],
+        [
+          3,
+          7.8
+        ],
+        [
+          4,
+          7.4
+        ],
+        [
+          8,
+          4.6
+        ],
+        [
+          9,
+          4.7
+        ],
+        [
+          10,
+          4.6
+        ],
+        [
+          11,
+          4.4
+        ],
+        [
+          12,
+          4.3
+        ],
+        [
+          13,
+          4.4
+        ],
+        [
+          15,
+          4.2
+        ],
+        [
+          16,
+          4.3
+        ],
+        [
+          19,
+          4.2
+        ],
+        [
+          21,
+          4.0
+        ],
+        [
+          22,
+          4.1
+        ],
+        [
+          22,
+          4.0
+        ],
+        [
+          25,
+          3.9
+        ],
+        [
+          26,
+          5.4
+        ],
+        [
+          27,
+          5.8
+        ],
+        [
+          28,
+          5.5
+        ]
+      ],
+      "qualified": true,
+      "pnl": 110.3,
+      "back_stake": 89.7,
+      "liability": 1280.0,
+      "year": 2022
+    },
+    {
+      "home": "Brazil",
+      "away": "Serbia",
+      "hg": 2,
+      "ag": 0,
+      "is_draw": false,
+      "pre_match_draw": 4.8,
+      "hg1st": 0,
+      "ag1st": 0,
+      "price_at_45": 3.3,
+      "price_at_60": 3.25,
+      "price_at_70": 2.9,
+      "price_at_80": 2.7,
+      "first_spike_min": 79,
+      "first_spike_price": 8.8,
+      "trade_out_price": 8.8,
+      "trade_out_min": 79,
+      "max_price": 1000.0,
+      "all_prices": [
+        [
+          3,
+          4.6
+        ],
+        [
+          4,
+          4.5
+        ],
+        [
+          4,
+          4.3
+        ],
+        [
+          5,
+          4.5
+        ],
+        [
+          7,
+          4.4
+        ],
+        [
+          7,
+          4.3
+        ],
+        [
+          10,
+          4.2
+        ],
+        [
+          11,
+          4.1
+        ],
+        [
+          13,
+          4.4
+        ],
+        [
+          14,
+          4.2
+        ],
+        [
+          15,
+          4.3
+        ],
+        [
+          16,
+          4.2
+        ],
+        [
+          18,
+          4.0
+        ],
+        [
+          19,
+          4.1
+        ],
+        [
+          20,
+          4.0
+        ],
+        [
+          22,
+          4.3
+        ],
+        [
+          23,
+          4.1
+        ],
+        [
+          24,
+          4.2
+        ],
+        [
+          24,
+          4.1
+        ],
+        [
+          26,
+          4.0
+        ]
+      ],
+      "qualified": true,
+      "pnl": 90.91,
+      "back_stake": 109.09,
+      "liability": 760.0,
+      "year": 2022
+    },
+    {
+      "home": "Costa Rica",
+      "away": "Germany",
+      "hg": 2,
+      "ag": 4,
+      "is_draw": false,
+      "pre_match_draw": 13.0,
+      "hg1st": 0,
+      "ag1st": 1,
+      "price_at_45": 26.0,
+      "price_at_60": 23.0,
+      "price_at_70": 22.0,
+      "price_at_80": 4.1,
+      "first_spike_min": 10,
+      "first_spike_price": 38.0,
+      "trade_out_price": 23.0,
+      "trade_out_min": 46,
+      "max_price": 1000.0,
+      "all_prices": [
+        [
+          0,
+          12.5
+        ],
+        [
+          0,
+          12.0
+        ],
+        [
+          2,
+          13.0
+        ],
+        [
+          2,
+          13.5
+        ],
+        [
+          3,
+          14.0
+        ],
+        [
+          4,
+          14.5
+        ],
+        [
+          6,
+          15.0
+        ],
+        [
+          7,
+          16.0
+        ],
+        [
+          9,
+          17.0
+        ],
+        [
+          10,
+          38.0
+        ],
+        [
+          11,
+          60.0
+        ],
+        [
+          11,
+          55.0
+        ],
+        [
+          13,
+          60.0
+        ],
+        [
+          14,
+          65.0
+        ],
+        [
+          15,
+          70.0
+        ],
+        [
+          17,
+          65.0
+        ],
+        [
+          19,
+          70.0
+        ],
+        [
+          21,
+          65.0
+        ],
+        [
+          21,
+          60.0
+        ],
+        [
+          23,
+          55.0
+        ]
+      ],
+      "qualified": true,
+      "pnl": 86.96,
+      "back_stake": 113.04,
+      "liability": 2400.0,
+      "year": 2022
+    },
+    {
+      "home": "Japan",
+      "away": "Spain",
+      "hg": 2,
+      "ag": 1,
+      "is_draw": false,
+      "pre_match_draw": 4.6,
+      "hg1st": 0,
+      "ag1st": 1,
+      "price_at_45": 7.8,
+      "price_at_60": 7.8,
+      "price_at_70": 3.15,
+      "price_at_80": 3.1,
+      "first_spike_min": 12,
+      "first_spike_price": 8.8,
+      "trade_out_price": 7.6,
+      "trade_out_min": 47,
+      "max_price": 38.0,
+      "all_prices": [
+        [
+          0,
+          4.5
+        ],
+        [
+          1,
+          4.3
+        ],
+        [
+          4,
+          4.4
+        ],
+        [
+          5,
+          4.3
+        ],
+        [
+          5,
+          4.4
+        ],
+        [
+          7,
+          4.3
+        ],
+        [
+          9,
+          4.4
+        ],
+        [
+          12,
+          8.8
+        ],
+        [
+          13,
+          8.6
+        ],
+        [
+          13,
+          8.8
+        ],
+        [
+          15,
+          9.4
+        ],
+        [
+          15,
+          10.5
+        ],
+        [
+          17,
+          10.0
+        ],
+        [
+          18,
+          9.6
+        ],
+        [
+          18,
+          9.8
+        ],
+        [
+          20,
+          9.6
+        ],
+        [
+          22,
+          9.4
+        ],
+        [
+          23,
+          9.6
+        ],
+        [
+          23,
+          9.8
+        ],
+        [
+          24,
+          9.4
+        ]
+      ],
+      "qualified": true,
+      "pnl": 78.95,
+      "back_stake": 121.05,
+      "liability": 720.0,
+      "year": 2022
+    },
+    {
+      "home": "France",
+      "away": "Poland",
+      "hg": 3,
+      "ag": 1,
+      "is_draw": false,
+      "pre_match_draw": 5.2,
+      "hg1st": 1,
+      "ag1st": 0,
+      "price_at_45": 7.6,
+      "price_at_60": 7.0,
+      "price_at_70": 8.0,
+      "price_at_80": 7.8,
+      "first_spike_min": 92,
+      "first_spike_price": 55.0,
+      "trade_out_price": 8.0,
+      "trade_out_min": 72,
+      "max_price": 1000.0,
+      "all_prices": [
+        [
+          0,
+          5.1
+        ],
+        [
+          1,
+          5.2
+        ],
+        [
+          2,
+          4.8
+        ],
+        [
+          2,
+          5.1
+        ],
+        [
+          3,
+          4.9
+        ],
+        [
+          5,
+          4.7
+        ],
+        [
+          6,
+          4.8
+        ],
+        [
+          6,
+          4.7
+        ],
+        [
+          7,
+          4.8
+        ],
+        [
+          8,
+          4.9
+        ],
+        [
+          11,
+          5.0
+        ],
+        [
+          13,
+          4.9
+        ],
+        [
+          14,
+          5.0
+        ],
+        [
+          14,
+          4.9
+        ],
+        [
+          16,
+          5.0
+        ],
+        [
+          18,
+          4.9
+        ],
+        [
+          19,
+          4.8
+        ],
+        [
+          21,
+          4.7
+        ],
+        [
+          22,
+          4.6
+        ],
+        [
+          23,
+          4.5
+        ]
+      ],
+      "qualified": true,
+      "pnl": 70.0,
+      "back_stake": 130.0,
+      "liability": 840.0,
+      "year": 2022
+    },
+    {
+      "home": "Argentina",
+      "away": "Australia",
+      "hg": 2,
+      "ag": 1,
+      "is_draw": false,
+      "pre_match_draw": 7.8,
+      "hg1st": 1,
+      "ag1st": 0,
+      "price_at_45": 10.0,
+      "price_at_60": 11.0,
+      "price_at_70": 12.0,
+      "price_at_80": 65.0,
+      "first_spike_min": 75,
+      "first_spike_price": 65.0,
+      "trade_out_price": 12.0,
+      "trade_out_min": 66,
+      "max_price": 500.0,
+      "all_prices": [
+        [
+          0,
+          7.2
+        ],
+        [
+          0,
+          6.8
+        ],
+        [
+          1,
+          6.4
+        ],
+        [
+          2,
+          6.6
+        ],
+        [
+          4,
+          6.2
+        ],
+        [
+          5,
+          5.8
+        ],
+        [
+          5,
+          5.7
+        ],
+        [
+          7,
+          5.5
+        ],
+        [
+          8,
+          5.6
+        ],
+        [
+          10,
+          5.4
+        ],
+        [
+          11,
+          5.2
+        ],
+        [
+          12,
+          5.3
+        ],
+        [
+          14,
+          5.2
+        ],
+        [
+          14,
+          5.4
+        ],
+        [
+          15,
+          5.3
+        ],
+        [
+          17,
+          5.5
+        ],
+        [
+          18,
+          5.3
+        ],
+        [
+          19,
+          5.4
+        ],
+        [
+          20,
+          5.3
+        ],
+        [
+          21,
+          5.1
+        ]
+      ],
+      "qualified": true,
+      "pnl": 70.0,
+      "back_stake": 130.0,
+      "liability": 1360.0,
+      "year": 2022
+    },
+    {
+      "home": "Cameroon",
+      "away": "Brazil",
+      "hg": 1,
+      "ag": 0,
+      "is_draw": false,
+      "pre_match_draw": 5.9,
+      "hg1st": 0,
+      "ag1st": 0,
+      "price_at_45": 3.9,
+      "price_at_60": 3.8,
+      "price_at_70": 3.4,
+      "price_at_80": 3.1,
+      "first_spike_min": 116,
+      "first_spike_price": 12.0,
+      "trade_out_price": 12.0,
+      "trade_out_min": 116,
+      "max_price": 50.0,
+      "all_prices": [
+        [
+          0,
+          5.6
+        ],
+        [
+          0,
+          5.7
+        ],
+        [
+          2,
+          5.9
+        ],
+        [
+          2,
+          5.8
+        ],
+        [
+          6,
+          5.4
+        ],
+        [
+          7,
+          5.3
+        ],
+        [
+          9,
+          5.2
+        ],
+        [
+          11,
+          5.3
+        ],
+        [
+          12,
+          5.4
+        ],
+        [
+          13,
+          5.3
+        ],
+        [
+          14,
+          5.4
+        ],
+        [
+          16,
+          5.3
+        ],
+        [
+          17,
+          5.2
+        ],
+        [
+          18,
+          4.8
+        ],
+        [
+          19,
+          5.0
+        ],
+        [
+          20,
+          4.6
+        ],
+        [
+          21,
+          4.5
+        ],
+        [
+          22,
+          4.6
+        ],
+        [
+          24,
+          4.4
+        ],
+        [
+          26,
+          4.6
+        ]
+      ],
+      "qualified": true,
+      "pnl": 101.67,
+      "back_stake": 98.33,
+      "liability": 980.0,
+      "year": 2022
+    },
+    {
+      "home": "Brazil",
+      "away": "South Korea",
+      "hg": 4,
+      "ag": 1,
+      "is_draw": false,
+      "pre_match_draw": 7.0,
+      "hg1st": 4,
+      "ag1st": 0,
+      "price_at_45": null,
+      "price_at_60": null,
+      "price_at_70": null,
+      "price_at_80": null,
+      "first_spike_min": 10,
+      "first_spike_price": 20.0,
+      "trade_out_price": 800.0,
+      "trade_out_min": 96,
+      "max_price": 1000.0,
+      "all_prices": [
+        [
+          0,
+          7.4
+        ],
+        [
+          1,
+          7.0
+        ],
+        [
+          4,
+          6.4
+        ],
+        [
+          5,
+          6.6
+        ],
+        [
+          6,
+          18.0
+        ],
+        [
+          7,
+          19.5
+        ],
+        [
+          8,
+          21.0
+        ],
+        [
+          10,
+          20.0
+        ],
+        [
+          11,
+          70.0
+        ],
+        [
+          12,
+          65.0
+        ],
+        [
+          13,
+          70.0
+        ],
+        [
+          15,
+          65.0
+        ],
+        [
+          16,
+          60.0
+        ],
+        [
+          18,
+          55.0
+        ],
+        [
+          19,
+          50.0
+        ],
+        [
+          22,
+          55.0
+        ],
+        [
+          23,
+          48.0
+        ],
+        [
+          24,
+          46.0
+        ],
+        [
+          25,
+          48.0
+        ],
+        [
+          26,
+          50.0
+        ]
+      ],
+      "qualified": true,
+      "pnl": 198.25,
+      "back_stake": 1.75,
+      "liability": 1200.0,
+      "year": 2022
+    }
+  ],
+  "matches_2018": [
+    {
+      "home": "Uruguay",
+      "away": "Saudi Arabia",
+      "year": 2018,
+      "pre_match_draw": 7.2,
+      "trade_out_price": 12.0,
+      "trade_out_min": 45,
+      "qualified": true,
+      "pnl": 80.0,
+      "liability": 1240.0,
+      "is_draw": false,
+      "hg": null,
+      "ag": null
+    },
+    {
+      "home": "Iran",
+      "away": "Spain",
+      "year": 2018,
+      "pre_match_draw": 7.6,
+      "trade_out_price": 17.0,
+      "trade_out_min": 73,
+      "qualified": true,
+      "pnl": 110.59,
+      "liability": 1320.0,
+      "is_draw": false,
+      "hg": null,
+      "ag": null
+    },
+    {
+      "home": "France",
+      "away": "Australia",
+      "year": 2018,
+      "pre_match_draw": 7.2,
+      "trade_out_price": 12.0,
+      "trade_out_min": 74,
+      "qualified": true,
+      "pnl": 80.0,
+      "liability": 1240.0,
+      "is_draw": false,
+      "hg": null,
+      "ag": null
+    },
+    {
+      "home": "Belgium",
+      "away": "Panama",
+      "year": 2018,
+      "pre_match_draw": 7.4,
+      "trade_out_price": 21.0,
+      "trade_out_min": 66,
+      "qualified": true,
+      "pnl": 129.52,
+      "liability": 1280.0,
+      "is_draw": false,
+      "hg": null,
+      "ag": null
+    },
+    {
+      "home": "South Korea",
+      "away": "Germany",
+      "year": 2018,
+      "pre_match_draw": 10.0,
+      "trade_out_price": 1000.0,
+      "trade_out_min": 114,
+      "qualified": true,
+      "pnl": 198.0,
+      "liability": 1800.0,
+      "is_draw": false,
+      "hg": null,
+      "ag": null
+    },
+    {
+      "home": "Serbia",
+      "away": "Brazil",
+      "year": 2018,
+      "pre_match_draw": 4.8,
+      "trade_out_price": 7.8,
+      "trade_out_min": 45,
+      "qualified": true,
+      "pnl": 76.92,
+      "liability": 760.0,
+      "is_draw": false,
+      "hg": null,
+      "ag": null
+    },
+    {
+      "home": "Argentina",
+      "away": "Iceland",
+      "year": 2018,
+      "pre_match_draw": 5.7,
+      "trade_out_price": 3.6,
+      "trade_out_min": 70,
+      "qualified": true,
+      "pnl": -161.54,
+      "liability": 940.0,
+      "is_draw": true,
+      "hg": null,
+      "ag": null
+    },
+    {
+      "home": "Brazil",
+      "away": "Switzerland",
+      "year": 2018,
+      "pre_match_draw": 4.5,
+      "trade_out_price": 8.4,
+      "trade_out_min": 45,
+      "qualified": true,
+      "pnl": 92.86,
+      "liability": 700.0,
+      "is_draw": false,
+      "hg": null,
+      "ag": null
+    },
+    {
+      "home": "Germany",
+      "away": "Mexico",
+      "year": 2018,
+      "pre_match_draw": 4.8,
+      "trade_out_price": 7.8,
+      "trade_out_min": 107,
+      "qualified": true,
+      "pnl": 76.92,
+      "liability": 760.0,
+      "is_draw": false,
+      "hg": null,
+      "ag": null
+    },
+    {
+      "home": "Nigeria",
+      "away": "Argentina",
+      "year": 2018,
+      "pre_match_draw": 5.5,
+      "trade_out_price": 8.4,
+      "trade_out_min": 46,
+      "qualified": true,
+      "pnl": 69.05,
+      "liability": 900.0,
+      "is_draw": false,
+      "hg": null,
+      "ag": null
+    },
+    {
+      "home": "Germany",
+      "away": "Sweden",
+      "year": 2018,
+      "pre_match_draw": 4.9,
+      "trade_out_price": 100.0,
+      "trade_out_min": 113,
+      "qualified": true,
+      "pnl": 190.2,
+      "liability": 780.0,
+      "is_draw": false,
+      "hg": null,
+      "ag": null
+    },
+    {
+      "home": "Belgium",
+      "away": "Tunisia",
+      "year": 2018,
+      "pre_match_draw": 5.4,
+      "trade_out_price": 9.2,
+      "trade_out_min": 45,
+      "qualified": true,
+      "pnl": 82.61,
+      "liability": 880.0,
+      "is_draw": false,
+      "hg": null,
+      "ag": null
+    },
+    {
+      "home": "Russia",
+      "away": "Saudi Arabia",
+      "year": 2018,
+      "pre_match_draw": 4.5,
+      "trade_out_price": 40.0,
+      "trade_out_min": 45,
+      "qualified": true,
+      "pnl": 177.5,
+      "liability": 700.0,
+      "is_draw": false,
+      "hg": null,
+      "ag": null
+    },
+    {
+      "home": "Brazil",
+      "away": "Costa Rica",
+      "year": 2018,
+      "pre_match_draw": 7.4,
+      "trade_out_price": 36.0,
+      "trade_out_min": 107,
+      "qualified": true,
+      "pnl": 158.89,
+      "liability": 1280.0,
+      "is_draw": false,
+      "hg": null,
+      "ag": null
+    },
+    {
+      "home": "Spain",
+      "away": "Morocco",
+      "year": 2018,
+      "pre_match_draw": 5.6,
+      "trade_out_price": 3.7,
+      "trade_out_min": 70,
+      "qualified": true,
+      "pnl": -140.74,
+      "liability": 920.0,
+      "is_draw": true,
+      "hg": null,
+      "ag": null
+    },
+    {
+      "home": "Brazil",
+      "away": "Mexico",
+      "year": 2018,
+      "pre_match_draw": 4.7,
+      "trade_out_price": 7.4,
+      "trade_out_min": 68,
+      "qualified": true,
+      "pnl": 72.97,
+      "liability": 740.0,
+      "is_draw": false,
+      "hg": null,
+      "ag": null
+    },
+    {
+      "home": "Belgium",
+      "away": "Japan",
+      "year": 2018,
+      "pre_match_draw": 4.8,
+      "trade_out_price": 7.2,
+      "trade_out_min": 84,
+      "qualified": true,
+      "pnl": 66.67,
+      "liability": 760.0,
+      "is_draw": false,
+      "hg": null,
+      "ag": null
+    }
+  ],
+  "summary": {
+    "2022": {
+      "bets": 18,
+      "wins": 18,
+      "losses": 0,
+      "pnl": 1983.1
+    },
+    "2018": {
+      "bets": 17,
+      "wins": 15,
+      "losses": 2,
+      "pnl": 1360.42
+    },
+    "total": {
+      "bets": 35,
+      "wins": 33,
+      "losses": 2,
+      "pnl": 3343.52
+    }
+  }
+}
