@@ -417,6 +417,26 @@ async def status():
     }
 
 
+@app.get("/api/match_chart/{home}/{away}")
+async def match_chart(home: str, away: str):
+    """Return minute-by-minute draw prices for a specific match."""
+    import json as _json, os
+    # Try 2022 first
+    for fname in ['data/wc2022_inplay.json', 'data/wc2018_inplay.json']:
+        fpath = os.path.join(os.path.dirname(__file__), fname)
+        if not os.path.exists(fpath):
+            continue
+        data = _json.load(open(fpath))
+        for m in data:
+            if home.lower()[:5] in m['home'].lower() and away.lower()[:5] in m['away'].lower():
+                return {
+                    "home": m['home'], "away": m['away'],
+                    "pre_match_draw": m['pre_match_draw'],
+                    "prices": m['in_play_prices'],  # [[minute, price], ...]
+                }
+    return {"error": "Match not found"}
+
+
 @app.get("/api/backtest_interactive")
 async def backtest_interactive(threshold: float = 4.5, stake: float = 200.0):
     # Load real data
@@ -427,7 +447,7 @@ async def backtest_interactive(threshold: float = 4.5, stake: float = 200.0):
         with open(real_file) as f:
             real = _json.load(f)
         # Recompute with user's threshold/stake
-        all_matches = real['matches_2022'] + real['matches_2018']
+        all_matches = real.get('all_matches', real.get('matches_2022', []) + real.get('matches_2018', []))
         results = []
         for m in all_matches:
             pre = m.get('pre_match_draw') or 0
