@@ -110,6 +110,7 @@ button:disabled { opacity: 0.4; cursor: default; }
     <button class="nav-tab active" onclick="showPage('dashboard',this)">Dashboard</button>
     <button class="nav-tab" onclick="showPage('strategy',this)">Strategy</button>
     <button class="nav-tab" onclick="showPage('lab',this)">Backtest Lab</button>
+    <button class="nav-tab" onclick="showPage('sim2026',this)">2026 Simulation</button>
   </div>
   <div class="controls">
     <span id="status-badge" class="badge badge-stopped">STOPPED</span>
@@ -301,6 +302,45 @@ button:disabled { opacity: 0.4; cursor: default; }
   </div>
 </div>
 
+<!-- 2026 SIMULATION -->
+<div id="page-sim2026" class="page">
+  <div style="max-width:960px">
+    <div style="background:linear-gradient(135deg,#1a1c2a,#161b22);border:1px solid #30363d;border-radius:12px;padding:24px;margin-bottom:20px">
+      <h2 style="font-size:18px;margin-bottom:8px;color:#bc8cff">2026 World Cup — Predicted Performance</h2>
+      <p style="color:#8b949e;font-size:13px;line-height:1.6">Projection based on current Smarkets exchange odds and historical spike patterns from 2018+2022 real data. <strong style="color:#d29922">These are predictions, not guaranteed outcomes.</strong></p>
+    </div>
+    <div style="background:#1c1a0a;border:1px solid #3d3000;border-radius:8px;padding:12px 16px;margin-bottom:16px;font-size:12px;color:#d29922">
+      ⚠️ <strong>PREDICTIONS — NOT REAL DATA</strong><br>
+      <span style="color:#3fb950">✅ Draw odds</span> — real, live from Smarkets Exchange (as of today)<br>
+      <span style="color:#d29922">⚠️ Spike ratios</span> — predicted using median from 100+ real historical trades<br>
+      <span style="color:#d29922">⚠️ P&L, draw rate</span> — estimated from 2018+2022 patterns (8.1% draw rate at 4.5+ threshold)
+    </div>
+    <div id="sim-stats" style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px"></div>
+    <div style="background:#161b22;border:1px solid #30363d;border-radius:8px;overflow:hidden">
+      <div style="padding:12px 16px;border-bottom:1px solid #30363d;font-size:13px;font-weight:600;color:#8b949e">Qualifying Matches (draw odds ≥ 4.5 on Smarkets)</div>
+      <table style="width:100%;border-collapse:collapse;font-size:13px">
+        <thead><tr style="background:#0d1117;color:#8b949e;font-size:11px;text-transform:uppercase">
+          <th style="padding:10px 16px;text-align:left">Match</th>
+          <th style="padding:10px 8px;text-align:center">Date</th>
+          <th style="padding:10px 8px;text-align:center">Draw Odds ✅</th>
+          <th style="padding:10px 8px;text-align:center">Liability</th>
+          <th style="padding:10px 8px;text-align:center">Pred. Spike ⚠️</th>
+          <th style="padding:10px 8px;text-align:center">Pred. Trade Price ⚠️</th>
+          <th style="padding:10px 12px;text-align:right">Pred. P&L ⚠️</th>
+        </tr></thead>
+        <tbody id="sim-tbody"></tbody>
+      </table>
+    </div>
+    <div style="margin-top:16px;background:#161b22;border:1px solid #30363d;border-radius:8px;padding:16px;font-size:12px;color:#8b949e;line-height:1.8">
+      <strong style="color:#e6edf3">Assumptions:</strong><br>
+      • Draw rate: 8.1% (from 37 real qualifying matches across 2018+2022)<br>
+      • Spike model: 2.0× for odds 4.5-5.0, 2.5× for 5.0-7.0, 3.5× for 7.0+ (medians from real Betfair data)<br>
+      • Only 20 of 72 group matches have Smarkets odds loaded (API rate limit). More will appear closer to tournament.<br>
+      • Actual results depend on match events, liquidity, and execution speed.
+    </div>
+  </div>
+</div>
+
 <!-- Match Chart Modal -->
 <div id="chart-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:1000;display:none;align-items:center;justify-content:center" onclick="if(event.target===this)this.style.display='none'">
   <div style="background:#161b22;border:1px solid #30363d;border-radius:12px;padding:24px;width:90%;max-width:800px;max-height:90vh;overflow-y:auto">
@@ -325,6 +365,7 @@ function showPage(name, btn) {
   if (btn) btn.classList.add('active');
   if (name === 'backtest') loadBacktest();
   if (name === 'lab') runLab();
+  if (name === 'sim2026') loadSim2026();
 }
 
 // ── WebSocket ─────────────────────────────────────────────────────────────────
@@ -539,6 +580,32 @@ function renderLabRows(rows, filter) {
       <td style="padding:7px 8px;text-align:center">${rc}</td>
       <td style="padding:7px 12px;text-align:right">${pc}</td>
     </tr>`;
+  }).join('');
+}
+
+// ── 2026 Simulation ───────────────────────────────────────────────────────────
+var simLoaded = false;
+async function loadSim2026() {
+  if (simLoaded) return;
+  simLoaded = true;
+  var d = await fetch('/api/simulation_2026').then(function(r){return r.json()});
+  if (d.error) return;
+  var p = d.prediction;
+  document.getElementById('sim-stats').innerHTML =
+    '<div class="lab-stat"><div class="ls-label">Qualifying Matches</div><div class="ls-val" style="color:#58a6ff">'+p.qualifying_matches+'</div></div>'+
+    '<div class="lab-stat"><div class="ls-label">Predicted Wins</div><div class="ls-val" style="color:#3fb950">'+p.predicted_wins+'</div></div>'+
+    '<div class="lab-stat"><div class="ls-label">Predicted Losses</div><div class="ls-val" style="color:#f85149">'+p.predicted_losses+'</div></div>'+
+    '<div class="lab-stat"><div class="ls-label">Predicted P&L (realistic)</div><div class="ls-val" style="color:#3fb950">£'+p.predicted_pnl_realistic+'</div></div>';
+  var qual = d.matches.filter(function(m){return m.qualified});
+  document.getElementById('sim-tbody').innerHTML = qual.sort(function(a,b){return b.draw_odds-a.draw_odds}).map(function(m){
+    return '<tr style="background:#0a1a0a;border-bottom:1px solid #21262d">'+
+      '<td style="padding:10px 16px;font-weight:600">'+m.home+' vs '+m.away+'</td>'+
+      '<td style="padding:10px 8px;text-align:center;color:#6e7681">'+m.date+'</td>'+
+      '<td style="padding:10px 8px;text-align:center;color:#58a6ff;font-weight:700">'+m.draw_odds.toFixed(2)+'</td>'+
+      '<td style="padding:10px 8px;text-align:center;color:#d29922">£'+m.liability.toFixed(0)+'</td>'+
+      '<td style="padding:10px 8px;text-align:center;color:#bc8cff">'+m.predicted_spike+'×</td>'+
+      '<td style="padding:10px 8px;text-align:center;color:#8b949e">'+m.predicted_trade_price+'</td>'+
+      '<td style="padding:10px 12px;text-align:right;color:#3fb950;font-weight:700">+£'+m.predicted_pnl.toFixed(0)+'</td></tr>';
   }).join('');
 }
 

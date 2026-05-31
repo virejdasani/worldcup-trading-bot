@@ -417,6 +417,16 @@ async def status():
     }
 
 
+@app.get("/api/simulation_2026")
+async def simulation_2026():
+    import json as _json, os
+    fpath = os.path.join(os.path.dirname(__file__), 'data', 'wc2026_simulation.json')
+    if os.path.exists(fpath):
+        with open(fpath) as f:
+            return _json.load(f)
+    return {"error": "No simulation data"}
+
+
 @app.get("/api/match_chart/{home}/{away}")
 async def match_chart(home: str, away: str):
     """Return minute-by-minute draw prices for a specific match."""
